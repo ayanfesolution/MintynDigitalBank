@@ -10,7 +10,6 @@
 		042DC2A4285B5B3F008FB972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A3285B5B3F008FB972 /* AppDelegate.swift */; };
 		042DC2A6285B5B3F008FB972 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */; };
 		042DC2A8285B5B3F008FB972 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A7285B5B3F008FB972 /* ViewController.swift */; };
-		042DC2AB285B5B3F008FB972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2A9285B5B3F008FB972 /* Main.storyboard */; };
 		042DC2AD285B5B42008FB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2AC285B5B42008FB972 /* Assets.xcassets */; };
 		042DC2B0285B5B42008FB972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2AE285B5B42008FB972 /* LaunchScreen.storyboard */; };
 		042DC2BB285B5B42008FB972 /* MintynDigitalBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2BA285B5B42008FB972 /* MintynDigitalBankTests.swift */; };
@@ -40,7 +39,6 @@
 		042DC2A3285B5B3F008FB972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		042DC2A7285B5B3F008FB972 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		042DC2AA285B5B3F008FB972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		042DC2AC285B5B42008FB972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042DC2AF285B5B42008FB972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042DC2B1285B5B42008FB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				042DC2A3285B5B3F008FB972 /* AppDelegate.swift */,
 				042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */,
 				042DC2A7285B5B3F008FB972 /* ViewController.swift */,
-				042DC2A9285B5B3F008FB972 /* Main.storyboard */,
 				042DC2AC285B5B42008FB972 /* Assets.xcassets */,
 				042DC2AE285B5B42008FB972 /* LaunchScreen.storyboard */,
 				042DC2B1285B5B42008FB972 /* Info.plist */,
@@ -233,7 +230,6 @@
 			files = (
 				042DC2B0285B5B42008FB972 /* LaunchScreen.storyboard in Resources */,
 				042DC2AD285B5B42008FB972 /* Assets.xcassets in Resources */,
-				042DC2AB285B5B3F008FB972 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		042DC2A9285B5B3F008FB972 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				042DC2AA285B5B3F008FB972 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		042DC2AE285B5B42008FB972 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +430,6 @@
 				INFOPLIST_FILE = MintynDigitalBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +457,6 @@
 				INFOPLIST_FILE = MintynDigitalBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
