@@ -15,3 +15,14 @@ func customAuthButton(text: String) -> UIButton {
     arrow.translatesAutoresizingMaskIntoConstraints = false
     return arrow
 }
+
+func customBoxButton(text: String, image: String) -> UIButton {
+    let boxButton = UIButton(type: .system)
+    let config = UIImage.SymbolConfiguration(pointSize: 40)
+    boxButton.setTitle(text, for: .normal)
+    boxButton.setImage(UIImage(systemName: image, withConfiguration: config), for: .normal)
+    boxButton.translatesAutoresizingMaskIntoConstraints = false
+    boxButton.heightAnchor.constraint(equalToConstant: 120).isActive = true
+    boxButton.widthAnchor.constraint(equalToConstant: 175).isActive = true
+    return boxButton
+}
