@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>times-new-roman-bold-italic.ttf</string>
+		<string>times new roman italic.ttf</string>
+		<string>times new roman.ttf</string>
+		<string>times new roman bold.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Black.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
