@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "advertbannertwo.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		042DC2A4285B5B3F008FB972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A3285B5B3F008FB972 /* AppDelegate.swift */; };
 		042DC2A6285B5B3F008FB972 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */; };
-		042DC2A8285B5B3F008FB972 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A7285B5B3F008FB972 /* ViewController.swift */; };
+		042DC2A8285B5B3F008FB972 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2A7285B5B3F008FB972 /* WelcomeScreenViewController.swift */; };
 		042DC2AD285B5B42008FB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2AC285B5B42008FB972 /* Assets.xcassets */; };
 		042DC2B0285B5B42008FB972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2AE285B5B42008FB972 /* LaunchScreen.storyboard */; };
 		042DC2BB285B5B42008FB972 /* MintynDigitalBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2BA285B5B42008FB972 /* MintynDigitalBankTests.swift */; };
 		042DC2C5285B5B42008FB972 /* MintynDigitalBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2C4285B5B42008FB972 /* MintynDigitalBankUITests.swift */; };
 		042DC2C7285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2C6285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift */; };
+		042DC2DA285B6DE7008FB972 /* CustomGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2D9285B6DE7008FB972 /* CustomGradient.swift */; };
+		042DC2DB285B6DE7008FB972 /* CustomGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2D9285B6DE7008FB972 /* CustomGradient.swift */; };
+		042DC2DC285B6DE8008FB972 /* CustomGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2D9285B6DE7008FB972 /* CustomGradient.swift */; };
+		042DC2DE285B74EA008FB972 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2DD285B74EA008FB972 /* CustomColors.swift */; };
+		042DC2DF285B74EA008FB972 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2DD285B74EA008FB972 /* CustomColors.swift */; };
+		042DC2E0285B74EA008FB972 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2DD285B74EA008FB972 /* CustomColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,7 @@
 		042DC2A0285B5B3F008FB972 /* MintynDigitalBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintynDigitalBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		042DC2A3285B5B3F008FB972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		042DC2A7285B5B3F008FB972 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		042DC2A7285B5B3F008FB972 /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		042DC2AC285B5B42008FB972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042DC2AF285B5B42008FB972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042DC2B1285B5B42008FB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +53,8 @@
 		042DC2C0285B5B42008FB972 /* MintynDigitalBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MintynDigitalBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		042DC2C4285B5B42008FB972 /* MintynDigitalBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MintynDigitalBankUITests.swift; sourceTree = "<group>"; };
 		042DC2C6285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MintynDigitalBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		042DC2D9285B6DE7008FB972 /* CustomGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradient.swift; sourceTree = "<group>"; };
+		042DC2DD285B74EA008FB972 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +105,12 @@
 		042DC2A2285B5B3F008FB972 /* MintynDigitalBank */ = {
 			isa = PBXGroup;
 			children = (
-				042DC2A3285B5B3F008FB972 /* AppDelegate.swift */,
-				042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */,
-				042DC2A7285B5B3F008FB972 /* ViewController.swift */,
-				042DC2AC285B5B42008FB972 /* Assets.xcassets */,
-				042DC2AE285B5B42008FB972 /* LaunchScreen.storyboard */,
+				042DC2D8285B6DBA008FB972 /* CustomFiles */,
+				042DC2D7285B6DAB008FB972 /* Models */,
+				042DC2D3285B6C9D008FB972 /* Delegates */,
+				042DC2D4285B6D1C008FB972 /* ViewControllers */,
+				042DC2D5285B6D41008FB972 /* Resources */,
+				042DC2D6285B6D62008FB972 /* Storyboards */,
 				042DC2B1285B5B42008FB972 /* Info.plist */,
 			);
 			path = MintynDigitalBank;
@@ -122,6 +131,55 @@
 				042DC2C6285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift */,
 			);
 			path = MintynDigitalBankUITests;
+			sourceTree = "<group>";
+		};
+		042DC2D3285B6C9D008FB972 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2A3285B5B3F008FB972 /* AppDelegate.swift */,
+				042DC2A5285B5B3F008FB972 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		042DC2D4285B6D1C008FB972 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2A7285B5B3F008FB972 /* WelcomeScreenViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		042DC2D5285B6D41008FB972 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2AC285B5B42008FB972 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		042DC2D6285B6D62008FB972 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2AE285B5B42008FB972 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		042DC2D7285B6DAB008FB972 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		042DC2D8285B6DBA008FB972 /* CustomFiles */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2D9285B6DE7008FB972 /* CustomGradient.swift */,
+				042DC2DD285B74EA008FB972 /* CustomColors.swift */,
+			);
+			path = CustomFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042DC2A8285B5B3F008FB972 /* ViewController.swift in Sources */,
+				042DC2A8285B5B3F008FB972 /* WelcomeScreenViewController.swift in Sources */,
+				042DC2DE285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC2A4285B5B3F008FB972 /* AppDelegate.swift in Sources */,
+				042DC2DA285B6DE7008FB972 /* CustomGradient.swift in Sources */,
 				042DC2A6285B5B3F008FB972 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042DC2DB285B6DE7008FB972 /* CustomGradient.swift in Sources */,
+				042DC2DF285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC2BB285B5B42008FB972 /* MintynDigitalBankTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				042DC2C7285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift in Sources */,
+				042DC2DC285B6DE8008FB972 /* CustomGradient.swift in Sources */,
+				042DC2E0285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC2C5285B5B42008FB972 /* MintynDigitalBankUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
