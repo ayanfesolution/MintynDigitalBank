@@ -7,10 +7,11 @@
 import UIKit
 import Foundation
 
-public func primaryGradientColor() -> CAGradientLayer {
+public func primaryGradientColor(uiButton: UIButton) -> CAGradientLayer {
     lazy var gradient: CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.type = .axial
+        gradient.frame.size = uiButton.frame.size
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
         gradient.colors = [

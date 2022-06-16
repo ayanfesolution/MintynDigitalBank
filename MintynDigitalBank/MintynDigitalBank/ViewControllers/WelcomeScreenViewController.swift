@@ -56,6 +56,7 @@ class WelcomeScreenViewController: UIViewController {
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = customFont(font: .robotoBlack, size: 16)
         button.backgroundColor = UIColor.CustomColor.primaryGoldColor
+        button.addTarget(self, action: #selector(nextScreen), for: .touchUpInside)
         return button
     }()
     // createAccountButton
@@ -68,18 +69,32 @@ class WelcomeScreenViewController: UIViewController {
         button.layer.borderColor = UIColor.CustomColor.tabBarIconColorActive.cgColor
          return button
     }()
+    // versionLabel
+    lazy var versionLabel: UILabel = {
+       let version = UILabel()
+        version.text = "Mintyn Version 1.2.70"
+        version.translatesAutoresizingMaskIntoConstraints = false
+        version.textColor = .white
+        version.textAlignment = .center
+        version.font = UIFont.systemFont(ofSize: 15)
+        return version
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         setUPView()
     }
+    @objc func nextScreen() {
+        let nextVc = LoginViewController()
+        nextVc.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(nextVc, animated: true)    }
     
     func setUPView() {
         let uiViews = [logoImageView, bottomUIView]
         for uiView in uiViews {
             view.addSubview(uiView)
         }
-        let items = [welcomeTextLabel, descriptionWelcomeTextLabel, loginButton, createAccountButton]
+        let items = [welcomeTextLabel, descriptionWelcomeTextLabel, loginButton, createAccountButton, versionLabel]
         for item in items {
             bottomUIView.addSubview(item)
         }
@@ -110,11 +125,10 @@ class WelcomeScreenViewController: UIViewController {
             createAccountButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
             createAccountButton.leadingAnchor.constraint(equalTo: bottomUIView.leadingAnchor, constant: 16),
             createAccountButton.trailingAnchor.constraint(equalTo: bottomUIView.trailingAnchor, constant: -16),
-        ])
-        
-        
-        
-        
+            // constraints for versionLabel
+            versionLabel.bottomAnchor.constraint(equalTo: bottomUIView.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            versionLabel.centerXAnchor.constraint(equalTo: bottomUIView.centerXAnchor)
+        ])  
     }
 }
 
