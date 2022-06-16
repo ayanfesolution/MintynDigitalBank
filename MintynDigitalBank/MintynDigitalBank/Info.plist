@@ -4,11 +4,12 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>times new roman bold italic.ttf</string>
+		<string>times-new-roman-bold-italic.ttf</string>
 		<string>times new roman italic.ttf</string>
 		<string>times new roman.ttf</string>
 		<string>times new roman bold.ttf</string>
 		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Black.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

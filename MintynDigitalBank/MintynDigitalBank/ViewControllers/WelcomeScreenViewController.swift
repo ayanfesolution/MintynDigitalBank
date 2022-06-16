@@ -50,6 +50,24 @@ class WelcomeScreenViewController: UIViewController {
         description.font = customFont(font: .timesNewRoman, size: 20)
         return description
     }()
+    // loginButton
+    lazy var loginButton: UIButton = {
+       let button = customAuthButton(text: "Login")
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = customFont(font: .robotoBlack, size: 16)
+        button.backgroundColor = UIColor.CustomColor.primaryGoldColor
+        return button
+    }()
+    // createAccountButton
+    lazy var createAccountButton: UIButton = {
+        let button = customAuthButton(text: "Create Acoount")
+        button.setTitleColor(UIColor.CustomColor.tabBarIconColorActive, for: .normal)
+         button.titleLabel?.font = customFont(font: .robotoBlack, size: 16)
+        button.backgroundColor = UIColor.clear
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.CustomColor.tabBarIconColorActive.cgColor
+         return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -61,7 +79,7 @@ class WelcomeScreenViewController: UIViewController {
         for uiView in uiViews {
             view.addSubview(uiView)
         }
-        let items = [welcomeTextLabel, descriptionWelcomeTextLabel]
+        let items = [welcomeTextLabel, descriptionWelcomeTextLabel, loginButton, createAccountButton]
         for item in items {
             bottomUIView.addSubview(item)
         }
@@ -83,7 +101,15 @@ class WelcomeScreenViewController: UIViewController {
             // Constriants for descriptionWelcomeTextLabel
             descriptionWelcomeTextLabel.topAnchor.constraint(equalTo: welcomeTextLabel.bottomAnchor, constant: 5),
             descriptionWelcomeTextLabel.leadingAnchor.constraint(equalTo: bottomUIView.leadingAnchor, constant: 35),
-            descriptionWelcomeTextLabel.trailingAnchor.constraint(equalTo: bottomUIView.trailingAnchor, constant: -35)
+            descriptionWelcomeTextLabel.trailingAnchor.constraint(equalTo: bottomUIView.trailingAnchor, constant: -35),
+            // Constriants for loginButton
+            loginButton.topAnchor.constraint(equalTo: descriptionWelcomeTextLabel.bottomAnchor, constant: 35),
+            loginButton.leadingAnchor.constraint(equalTo: bottomUIView.leadingAnchor, constant: 16),
+            loginButton.trailingAnchor.constraint(equalTo: bottomUIView.trailingAnchor, constant: -16),
+            // constraints for createAccountButton
+            createAccountButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
+            createAccountButton.leadingAnchor.constraint(equalTo: bottomUIView.leadingAnchor, constant: 16),
+            createAccountButton.trailingAnchor.constraint(equalTo: bottomUIView.trailingAnchor, constant: -16),
         ])
         
         
