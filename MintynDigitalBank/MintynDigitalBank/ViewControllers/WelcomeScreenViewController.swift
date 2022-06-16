@@ -11,7 +11,7 @@ class WelcomeScreenViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
     
     // LogoImage
-    let logoImageView: UIImageView = {
+    lazy var logoImageView: UIImageView = {
         let logo = UIImageView()
         logo.translatesAutoresizingMaskIntoConstraints = false
         logo.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -19,7 +19,14 @@ class WelcomeScreenViewController: UIViewController {
         logo.image = UIImage(named: "welcomelogo")
         return logo
     }()
-    
+    // bottomUIView
+    lazy var bottomUIView: UIView = {
+        let bottomView = UIView()
+        bottomView.backgroundColor = UIColor.CustomColor.boxLightDarkColor
+        bottomView.layer.cornerRadius = 40
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        return bottomView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +36,7 @@ class WelcomeScreenViewController: UIViewController {
     }
     
     func setUPView() {
-        let uiViews = [logoImageView]
+        let uiViews = [logoImageView, bottomUIView]
         for uiView in uiViews {
             view.addSubview(uiView)
         }
@@ -37,7 +44,12 @@ class WelcomeScreenViewController: UIViewController {
         NSLayoutConstraint.activate([
             // Constraints for logoImageView
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            // Constraints for bottomView
+            bottomUIView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
+            bottomUIView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
+            bottomUIView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bottomUIView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 50)
         ])
         
         
