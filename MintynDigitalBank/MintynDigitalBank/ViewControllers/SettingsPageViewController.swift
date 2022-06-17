@@ -10,6 +10,7 @@ import UIKit
 class SettingsPageViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
     let accountSetting = SettingsTimeTableList.getListOfMeal()
+    let reusableCell = "settingsPageCell"
     // Header Title
     lazy var navTitleHeader: UILabel = {
         let navTitle = UILabel()
@@ -24,6 +25,8 @@ class SettingsPageViewController: UIViewController {
         settingsTable.translatesAutoresizingMaskIntoConstraints = false
         settingsTable.delegate = self
         settingsTable.dataSource = self
+        settingsTable.separatorStyle = .none
+        settingsTable.register(UITableViewCell.self, forCellReuseIdentifier: reusableCell)
         return settingsTable
     }()
     override func viewDidLoad() {
@@ -53,10 +56,26 @@ class SettingsPageViewController: UIViewController {
 
 extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return accountSetting.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let config = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold)
+        let arrowImage = UIImageView(image: UIImage(systemName: "chevron.forward", withConfiguration: config))
+        arrowImage.tintColor = UIColor.CustomColor.textColorGray
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell, for: indexPath)
+        let lists = accountSetting[indexPath.row]
+    //    cell.accessoryType = .disclosureIndicator
+        cell.accessoryView = arrowImage
+        cell.imageView?.image = lists.viewImage
+        cell.imageView?.tintColor = .lightGray
+        cell.textLabel?.text = lists.viewLabel
+        cell.textLabel?.textColor = UIColor.CustomColor.textColorGray
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
     }
 }
