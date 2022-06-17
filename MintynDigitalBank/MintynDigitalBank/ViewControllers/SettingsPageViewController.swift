@@ -39,7 +39,6 @@ class SettingsPageViewController: UIViewController {
         for item in items {
             view.addSubview(item)
         }
-        
         //MARK: - Setting Up Constraints for the UIViews
         NSLayoutConstraint.activate([
             // constraints for Header
@@ -55,6 +54,11 @@ class SettingsPageViewController: UIViewController {
 }
 
 extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource {
+    private func showNext(scene: UIViewController) {
+        scene.modalPresentationStyle = .fullScreen
+        present(scene, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accountSetting.count
     }
@@ -76,5 +80,24 @@ extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 3 :
+            let nextVC = LoginViewController()
+            showNext(scene: nextVC)
+        case 5 :
+            let nextVC = LoginViewController()
+            showNext(scene: nextVC)
+        case 7 :
+            let nextVC = LoginViewController()
+            nextVC.navigationBtn.isHidden = true
+            showNext(scene: nextVC)
+            
+        default:
+            break
+        }
     }
 }
