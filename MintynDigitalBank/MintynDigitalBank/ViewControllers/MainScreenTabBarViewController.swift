@@ -20,9 +20,9 @@ class MainScreenTabBarViewController: UITabBarController {
     func setupTabBarViews() {
         tabBar.tintColor = UIColor.CustomColor.tabBarIconColorActive
         tabBar.unselectedItemTintColor = UIColor.CustomColor.tabBarIconColorNotActive
-        tabBar.layer.shadowColor = UIColor.lightGray.cgColor
-        tabBar.layer.shadowOpacity = 0.2
-        tabBar.layer.shadowRadius = 5
+        tabBar.layer.shadowColor = UIColor.white.cgColor
+        tabBar.layer.shadowOpacity = 0
+        tabBar.layer.shadowRadius = 0
         tabBar.clipsToBounds = false
         tabBar.backgroundColor = UIColor.white
         home.title = "Home"

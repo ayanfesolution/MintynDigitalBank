@@ -239,6 +239,7 @@
 			children = (
 				042DC330285BA148008FB972 /* CustomViews */,
 				042DC2A7285B5B3F008FB972 /* WelcomeScreenViewController.swift */,
+				042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */,
 				042DC331285BAC8A008FB972 /* LoginViewController.swift */,
 				042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */,
 				042DC339285C2E44008FB972 /* HomePageViewController.swift */,
@@ -324,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				042DC2E1285B9629008FB972 /* CustomViews.swift */,
-				042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";

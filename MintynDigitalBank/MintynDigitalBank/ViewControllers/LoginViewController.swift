@@ -242,7 +242,9 @@ class LoginViewController: UIViewController {
         dismiss(animated: true)
     }
     @objc func implementLogin() {
-        
+     let nextVC = MainScreenTabBarViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true)
     }
     @objc func reviewPassword() {
         
@@ -265,13 +267,12 @@ class LoginViewController: UIViewController {
             bottomUIView.addSubview(item)
         }
        
-        
         //MARK: - Setting Up Constraints for the UIViews
         NSLayoutConstraint.activate([
-            //  Navigation Button
+            //  constraints for Navigation Button
             navigationBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             navigationBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
-            // MARK: - The Header
+            // constraints for Header
             navTitleHeader.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             navTitleHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             // constraints for upperHorizonatalStackView
