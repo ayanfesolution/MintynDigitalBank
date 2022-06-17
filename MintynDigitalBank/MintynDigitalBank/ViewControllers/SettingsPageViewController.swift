@@ -65,7 +65,6 @@ extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource
         arrowImage.tintColor = UIColor.CustomColor.textColorGray
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell, for: indexPath)
         let lists = accountSetting[indexPath.row]
-    //    cell.accessoryType = .disclosureIndicator
         cell.accessoryView = arrowImage
         cell.imageView?.image = lists.viewImage
         cell.imageView?.tintColor = .lightGray
