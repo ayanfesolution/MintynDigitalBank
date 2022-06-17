@@ -135,7 +135,7 @@ class HomePageViewController: UIViewController {
         label.text = "Available Balance"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     // amountLabel
@@ -143,17 +143,26 @@ class HomePageViewController: UIViewController {
        let label = UILabel()
         label.text = "#2500.00"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.CustomColor.textColorGray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
         return label
+    }()
+    lazy var fundAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Fund Account", for: .normal)
+        button.backgroundColor = .black
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = 6
+        return button
     }()
     // ledgerBalance
     lazy var ledgerBalance: UILabel = {
        let label = UILabel()
-        label.text = "Available Balance"
+        label.text = "Ledger Balance:"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     // amountLabel
@@ -162,7 +171,7 @@ class HomePageViewController: UIViewController {
         label.text = "#3300.00"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         return label
     }()
     // hideBalanceLabel
@@ -177,6 +186,7 @@ class HomePageViewController: UIViewController {
     // hideBalanceSwitch
     lazy var hideBalanceSwitch: UISwitch = {
         let hideSwitch = UISwitch()
+        hideSwitch.thumbTintColor = UIColor.CustomColor.primaryGoldColor
         hideSwitch.translatesAutoresizingMaskIntoConstraints = false
         return hideSwitch
     }()
@@ -203,13 +213,17 @@ class HomePageViewController: UIViewController {
         for item in items {
             view.addSubview(item)
         }
-        let scrollLists = [profileDetailsView, combineOtherViews, accountBalanceDetailsView]
+        let scrollLists = [profileDetailsView, combineOtherViews, accountBalanceDetailsView, ledgerBalance, ledgerAmountLabel, hideBalanceSwitch, hideBalanceLabel, straightLineTwo]
         for scrollList in scrollLists {
             homePageView.addSubview(scrollList)
         }
         let profileViewItems = [profileCopyButton, profileDetailsDropDownButton, profileAccountType, profileAccountNumber, profileAccountName, profileImage]
         for profileViewItem in profileViewItems {
             profileDetailsView.addSubview(profileViewItem)
+        }
+        let accountBalanceViewLists = [avaliableBalance, mainAmountLabel, fundAccountButton]
+        for accountBalanceViewList in accountBalanceViewLists {
+            accountBalanceDetailsView.addSubview(accountBalanceViewList)
         }
             //MARK: - Setting Up Constraints for the UIViews
             NSLayoutConstraint.activate([
@@ -247,13 +261,13 @@ class HomePageViewController: UIViewController {
                 //  constraints for profileAccountType
                 profileAccountType.topAnchor.constraint(equalTo: profileAccountName.bottomAnchor),
                 profileAccountType.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
-                //  constraints for
+                //  constraints for profileAccountNumber
                 profileAccountNumber.topAnchor.constraint(equalTo: profileAccountName.bottomAnchor),
                 profileAccountNumber.leadingAnchor.constraint(equalTo: profileAccountType.trailingAnchor, constant: 5),
-                //  constraints for
+                //  constraints for profileCopyButton
                 profileCopyButton.trailingAnchor.constraint(equalTo: profileDetailsView.trailingAnchor, constant: -20),
                 profileCopyButton.topAnchor.constraint(equalTo: profileDetailsView.topAnchor, constant: 25),
-                //  constraints for
+                //  constraints for profileDetailsDropDownButton
                 profileDetailsDropDownButton.leadingAnchor.constraint(equalTo: profileAccountNumber.trailingAnchor, constant: 10),
                 profileDetailsDropDownButton.topAnchor.constraint(equalTo: profileDetailsView.topAnchor, constant: 30),
                 //  constraints for profileDetailsView
@@ -261,10 +275,43 @@ class HomePageViewController: UIViewController {
                 profileDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 profileDetailsView.heightAnchor.constraint(equalToConstant: 100),
                 profileDetailsView.topAnchor.constraint(equalTo: straightLine.bottomAnchor),
-                //  constraints for
+                //  constraints for accountBalanceDetailsView
                 accountBalanceDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 accountBalanceDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 accountBalanceDetailsView.topAnchor.constraint(equalTo: profileDetailsView.bottomAnchor),
+                //  constraints for avaliableBalance
+                avaliableBalance.topAnchor.constraint(equalTo: accountBalanceDetailsView.topAnchor, constant: 40),
+                avaliableBalance.leadingAnchor.constraint(equalTo: accountBalanceDetailsView.leadingAnchor, constant: 20),
+                //  constraints for mainAmountLabel
+                mainAmountLabel.topAnchor.constraint(equalTo: avaliableBalance.bottomAnchor, constant: 5),
+                mainAmountLabel.leadingAnchor.constraint(equalTo: accountBalanceDetailsView.leadingAnchor, constant: 20),
+                //  constraints for
+                fundAccountButton.centerYAnchor.constraint(equalTo: accountBalanceDetailsView.centerYAnchor),
+                fundAccountButton.trailingAnchor.constraint(equalTo: accountBalanceDetailsView.trailingAnchor, constant: -20),
+                fundAccountButton.heightAnchor.constraint(equalToConstant: 45),
+                fundAccountButton.widthAnchor.constraint(equalToConstant: 130),
+                //  constraints for ledgerBalance
+                ledgerBalance.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 15),
+                ledgerBalance.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+                //  constraints for ledgerAmountLabel
+                ledgerAmountLabel.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 15),
+                ledgerAmountLabel.leadingAnchor.constraint(equalTo: ledgerBalance.trailingAnchor, constant: 5),
+                //  constraints for hideBalanceLabel
+                hideBalanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+                hideBalanceLabel.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 17),
+                //  constraints for
+                hideBalanceSwitch.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 12),
+                hideBalanceSwitch.trailingAnchor.constraint(equalTo: hideBalanceLabel.leadingAnchor, constant: -5),
+                //  constraints for
+                straightLineTwo.topAnchor.constraint(equalTo: hideBalanceSwitch.bottomAnchor, constant: 12),
+                straightLineTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                straightLineTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                //  constraints for
+                //  constraints for
+                //  constraints for
+                //  constraints for
+                //  constraints for
+                //  constraints for
                 //  constraints for
                 //  constraints for
                 //  constraints for
