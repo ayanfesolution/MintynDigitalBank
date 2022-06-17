@@ -81,6 +81,15 @@
 		042DC332285BAC8A008FB972 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC331285BAC8A008FB972 /* LoginViewController.swift */; };
 		042DC333285BAC8A008FB972 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC331285BAC8A008FB972 /* LoginViewController.swift */; };
 		042DC334285BAC8A008FB972 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC331285BAC8A008FB972 /* LoginViewController.swift */; };
+		042DC336285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */; };
+		042DC337285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */; };
+		042DC338285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */; };
+		042DC33A285C2E44008FB972 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC339285C2E44008FB972 /* HomePageViewController.swift */; };
+		042DC33B285C2E44008FB972 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC339285C2E44008FB972 /* HomePageViewController.swift */; };
+		042DC33C285C2E44008FB972 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC339285C2E44008FB972 /* HomePageViewController.swift */; };
+		042DC33E285C2E59008FB972 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */; };
+		042DC33F285C2E59008FB972 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */; };
+		042DC340285C2E59008FB972 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +144,9 @@
 		042DC307285B9CB8008FB972 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		042DC308285B9CB8008FB972 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		042DC331285BAC8A008FB972 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTabBarViewController.swift; sourceTree = "<group>"; };
+		042DC339285C2E44008FB972 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +240,8 @@
 				042DC330285BA148008FB972 /* CustomViews */,
 				042DC2A7285B5B3F008FB972 /* WelcomeScreenViewController.swift */,
 				042DC331285BAC8A008FB972 /* LoginViewController.swift */,
+				042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */,
+				042DC339285C2E44008FB972 /* HomePageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				042DC2E1285B9629008FB972 /* CustomViews.swift */,
+				042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -496,12 +511,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				042DC2A8285B5B3F008FB972 /* WelcomeScreenViewController.swift in Sources */,
+				042DC33E285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC2DE285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC2F8285B9B16008FB972 /* CustomFonts.swift in Sources */,
 				042DC2A4285B5B3F008FB972 /* AppDelegate.swift in Sources */,
 				042DC332285BAC8A008FB972 /* LoginViewController.swift in Sources */,
+				042DC336285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
 				042DC2E2285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2DA285B6DE7008FB972 /* CustomGradient.swift in Sources */,
+				042DC33A285C2E44008FB972 /* HomePageViewController.swift in Sources */,
 				042DC2A6285B5B3F008FB972 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +532,9 @@
 				042DC2DB285B6DE7008FB972 /* CustomGradient.swift in Sources */,
 				042DC2E3285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2F9285B9B16008FB972 /* CustomFonts.swift in Sources */,
+				042DC33B285C2E44008FB972 /* HomePageViewController.swift in Sources */,
+				042DC33F285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
+				042DC337285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
 				042DC2DF285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC2BB285B5B42008FB972 /* MintynDigitalBankTests.swift in Sources */,
 			);
@@ -523,13 +544,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042DC340285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC334285BAC8A008FB972 /* LoginViewController.swift in Sources */,
 				042DC2C7285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift in Sources */,
+				042DC33C285C2E44008FB972 /* HomePageViewController.swift in Sources */,
 				042DC2DC285B6DE8008FB972 /* CustomGradient.swift in Sources */,
 				042DC2E4285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2FA285B9B16008FB972 /* CustomFonts.swift in Sources */,
 				042DC2E0285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC2C5285B5B42008FB972 /* MintynDigitalBankUITests.swift in Sources */,
+				042DC338285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
