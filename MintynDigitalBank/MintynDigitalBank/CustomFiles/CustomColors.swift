@@ -17,5 +17,6 @@ extension UIColor {
         static let tabBarIconColorNotActive = #colorLiteral(red: 0.2817465663, green: 0.3453536928, blue: 0.3832940757, alpha: 1)
         static let tabBarIconColorActive = #colorLiteral(red: 0.8504491448, green: 0.6878069639, blue: 0.3424840569, alpha: 1)
         static let textFieldBackgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1529411765, blue: 0.1529411765, alpha: 1)
+        static let viewLightBackgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
     }
 }
