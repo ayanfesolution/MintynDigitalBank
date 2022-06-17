@@ -10,6 +10,7 @@
 		<string>times new roman bold.ttf</string>
 		<string>Roboto-Bold.ttf</string>
 		<string>Roboto-Black.ttf</string>
+		<string>Roboto-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
