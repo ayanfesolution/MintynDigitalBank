@@ -87,7 +87,8 @@ class WelcomeScreenViewController: UIViewController {
     @objc func nextScreen() {
         let nextVc = LoginViewController()
         nextVc.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(nextVc, animated: true)    }
+        present(nextVc, animated: true)
+    }
     
     func setUPView() {
         let uiViews = [logoImageView, bottomUIView]
@@ -105,8 +106,8 @@ class WelcomeScreenViewController: UIViewController {
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             // Constraints for bottomView
-            bottomUIView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
-            bottomUIView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
+            bottomUIView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 1),
+            bottomUIView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1),
             bottomUIView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             bottomUIView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 50),
             // Constriants for welcomeTextLabel

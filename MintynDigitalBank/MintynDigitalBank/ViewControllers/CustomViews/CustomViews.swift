@@ -18,9 +18,10 @@ func customAuthButton(text: String) -> UIButton {
 
 func customBoxButton(text: String, image: String) -> UIButton {
     let boxButton = UIButton(type: .system)
-    let config = UIImage.SymbolConfiguration(pointSize: 40)
+    let config = UIImage.SymbolConfiguration(pointSize: 35)
     boxButton.setTitle(text, for: .normal)
     boxButton.setImage(UIImage(systemName: image, withConfiguration: config), for: .normal)
+    boxButton.layer.cornerRadius = 8
     boxButton.translatesAutoresizingMaskIntoConstraints = false
     boxButton.heightAnchor.constraint(equalToConstant: 120).isActive = true
     boxButton.widthAnchor.constraint(equalToConstant: 175).isActive = true
