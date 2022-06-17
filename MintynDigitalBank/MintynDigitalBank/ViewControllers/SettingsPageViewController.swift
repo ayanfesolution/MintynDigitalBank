@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsPageViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
-    let accountSetting = SettingsTimeTableList.getListOfMeal()
+    let settingsData = SettingsTimeTableList.getListOfMeal()
     let reusableCell = "settingsPageCell"
     // Header Title
     lazy var navTitleHeader: UILabel = {
@@ -60,7 +60,7 @@ extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accountSetting.count
+        return settingsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +68,7 @@ extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource
         let arrowImage = UIImageView(image: UIImage(systemName: "chevron.forward", withConfiguration: config))
         arrowImage.tintColor = UIColor.CustomColor.textColorGray
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell, for: indexPath)
-        let lists = accountSetting[indexPath.row]
+        let lists = settingsData[indexPath.row]
         cell.accessoryView = arrowImage
         cell.imageView?.image = lists.viewImage
         cell.imageView?.tintColor = .lightGray
@@ -86,10 +86,10 @@ extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 3 :
-            let nextVC = LoginViewController()
+            let nextVC = LegalViewController()
             showNext(scene: nextVC)
         case 5 :
-            let nextVC = LoginViewController()
+            let nextVC = SystemViewController()
             showNext(scene: nextVC)
         case 7 :
             let nextVC = LoginViewController()
