@@ -9,6 +9,8 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
+    let reusableCell = "advertCell"
+    let advertImage  = ["advertbannerone", "advertbannertwo"]
     //  headerview
     lazy var headerView: UIView = {
        let header = UIView()
@@ -25,6 +27,20 @@ class HomePageViewController: UIViewController {
         button.contentMode = .scaleAspectFill
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
+        return button
+    }()
+    // notificationButton
+    lazy var addActionFloatingButton: UIButton = {
+        let button = UIButton(type: .system)
+        let config = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "plus", withConfiguration: config), for: .normal)
+        button.tintColor = UIColor.CustomColor.primaryGoldColor
+        button.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        button.layer.cornerRadius = 40
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.CustomColor.primaryGoldColor
         return button
     }()
     // logoImageView
@@ -94,7 +110,7 @@ class HomePageViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
-    // a
+    // profileDetailsDropDownButton
     lazy var profileDetailsDropDownButton: UIButton = {
         let button = UIButton(type: .system)
         let config = UIImage.SymbolConfiguration(pointSize: 15, weight: .bold)
@@ -103,6 +119,7 @@ class HomePageViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    // profileCopyButton
     lazy var profileCopyButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Copy", for: .normal)
@@ -116,7 +133,7 @@ class HomePageViewController: UIViewController {
     // combineOtherViews
     lazy var combineOtherViews: UIView = {
         let combineOtherViews = UIView()
-        combineOtherViews.layer.cornerRadius = 18
+        combineOtherViews.layer.cornerRadius = 40
         combineOtherViews.backgroundColor = .white
         combineOtherViews.translatesAutoresizingMaskIntoConstraints = false
         return combineOtherViews
@@ -147,6 +164,7 @@ class HomePageViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
         return label
     }()
+    // fundAccountButton
     lazy var fundAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -187,6 +205,7 @@ class HomePageViewController: UIViewController {
     lazy var hideBalanceSwitch: UISwitch = {
         let hideSwitch = UISwitch()
         hideSwitch.thumbTintColor = UIColor.CustomColor.primaryGoldColor
+        hideSwitch.onTintColor = UIColor.clear
         hideSwitch.translatesAutoresizingMaskIntoConstraints = false
         return hideSwitch
     }()
@@ -198,7 +217,86 @@ class HomePageViewController: UIViewController {
         line.backgroundColor = UIColor.CustomColor.textColorGray
         return line
     }()
+    // advertCollectionView
+    lazy var advertCollectionView: UICollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 300, height: 80)
+        let advertCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        advertCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        advertCollectionView.register(AdvertCollectionViewCell.self, forCellWithReuseIdentifier: reusableCell)
+        advertCollectionView.delegate = self
+        advertCollectionView.dataSource = self
+        return advertCollectionView
+    }()
+    // transactionsUIView
+    lazy var transactionsUIView: UIView = {
+       let transactionsUIView = UIView()
+        transactionsUIView.layer.cornerRadius = 8
+        transactionsUIView.layer.borderWidth = 1
+        transactionsUIView.layer.borderColor = UIColor.white.cgColor
+        transactionsUIView.backgroundColor = .white
+        transactionsUIView.translatesAutoresizingMaskIntoConstraints = false
+        return transactionsUIView
+    }()
+    // hideBalanceLabel
+    lazy var noTranscationsyetLabel: UILabel = {
+       let label = UILabel()
+        label.text = "No transcations yet"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        return label
+    }()
+    // chooseAnOptionToStart
+    lazy var chooseAnOptionToStart: UILabel = {
+       let label = UILabel()
+        label.text = "Choose an option below to start."
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        return label
+    }()
+    // noTransactionsImage
+    lazy var noTransactionsImage: UIView = {
+        let transactionImage = UIView()
+        transactionImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        transactionImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        transactionImage.translatesAutoresizingMaskIntoConstraints = false
+        transactionImage.layer.cornerRadius = 30
+        transactionImage.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.09)
+        let image = UIImageView()
+        transactionImage.addSubview(image)
+        let config = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold)
+        image.image = UIImage(systemName: "chart.line.uptrend.xyaxis", withConfiguration: config)
+        image.centerXAnchor.constraint(equalTo: transactionImage.centerXAnchor).isActive = true
+        image.centerYAnchor.constraint(equalTo: transactionImage.centerYAnchor).isActive = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = UIColor.CustomColor.primaryGoldColor
+        return transactionImage
+    }()
     
+    lazy var completeYourVerificationButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Complete your Verification                         ", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        button.setTitleColor(UIColor.CustomColor.primaryGoldColor, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 6
+        button.backgroundColor = .white
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        return button
+    }()
+    // completeYourVerificationButtonArrow
+    lazy var completeYourVerificationButtonArrow: UIButton = {
+        let navBtn = UIButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 25, weight: UIImage.SymbolWeight.bold)
+        navBtn.translatesAutoresizingMaskIntoConstraints = false
+        navBtn.setImage(UIImage(systemName: "chevron.forward", withConfiguration: config), for: .normal)
+        navBtn.tintColor = UIColor.CustomColor.textColorGray
+        return navBtn
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
@@ -209,11 +307,11 @@ class HomePageViewController: UIViewController {
         for headerList in headerLists {
             headerView.addSubview(headerList)
         }
-        let items = [headerView, straightLine, homePageView]
+        let items = [headerView, straightLine, homePageView, addActionFloatingButton]
         for item in items {
             view.addSubview(item)
         }
-        let scrollLists = [profileDetailsView, combineOtherViews, accountBalanceDetailsView, ledgerBalance, ledgerAmountLabel, hideBalanceSwitch, hideBalanceLabel, straightLineTwo]
+        let scrollLists = [profileDetailsView, combineOtherViews, accountBalanceDetailsView, ledgerBalance, ledgerAmountLabel, hideBalanceSwitch, hideBalanceLabel, straightLineTwo, advertCollectionView, transactionsUIView, completeYourVerificationButton, completeYourVerificationButtonArrow]
         for scrollList in scrollLists {
             homePageView.addSubview(scrollList)
         }
@@ -225,8 +323,14 @@ class HomePageViewController: UIViewController {
         for accountBalanceViewList in accountBalanceViewLists {
             accountBalanceDetailsView.addSubview(accountBalanceViewList)
         }
+        let noTranscationsItems = [noTransactionsImage, noTranscationsyetLabel, chooseAnOptionToStart]
+        for noTranscationsItem in noTranscationsItems {
+            transactionsUIView.addSubview(noTranscationsItem)
+        }
             //MARK: - Setting Up Constraints for the UIViews
             NSLayoutConstraint.activate([
+                addActionFloatingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                addActionFloatingButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
                 //  constraints for headerView
                 headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                 headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -252,6 +356,8 @@ class HomePageViewController: UIViewController {
                 combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor),
                 combineOtherViews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 combineOtherViews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                combineOtherViews.topAnchor.constraint(equalTo: completeYourVerificationButton.bottomAnchor, constant: 20),
+                combineOtherViews.heightAnchor.constraint(equalToConstant: 200),
                 //  constraints for profileImage
                 profileImage.topAnchor.constraint(equalTo: profileDetailsView.topAnchor),
                 profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -274,7 +380,7 @@ class HomePageViewController: UIViewController {
                 profileDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 profileDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 profileDetailsView.heightAnchor.constraint(equalToConstant: 100),
-                profileDetailsView.topAnchor.constraint(equalTo: straightLine.bottomAnchor),
+                profileDetailsView.topAnchor.constraint(equalTo: homePageView.topAnchor),
                 //  constraints for accountBalanceDetailsView
                 accountBalanceDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 accountBalanceDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -299,22 +405,60 @@ class HomePageViewController: UIViewController {
                 //  constraints for hideBalanceLabel
                 hideBalanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
                 hideBalanceLabel.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 17),
-                //  constraints for
+                //  constraints for hideBalanceSwitch
                 hideBalanceSwitch.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 12),
                 hideBalanceSwitch.trailingAnchor.constraint(equalTo: hideBalanceLabel.leadingAnchor, constant: -5),
-                //  constraints for
+                //  constraints for straightLineTwo
                 straightLineTwo.topAnchor.constraint(equalTo: hideBalanceSwitch.bottomAnchor, constant: 12),
                 straightLineTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 straightLineTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                //  constraints for
-                //  constraints for
-                //  constraints for
-                //  constraints for
-                //  constraints for
-                //  constraints for
-                //  constraints for
+                //  constraints for advertCollectionView
+                advertCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                advertCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                advertCollectionView.topAnchor.constraint(equalTo: straightLineTwo.bottomAnchor),
+                advertCollectionView.heightAnchor.constraint(equalToConstant: 160),
+                //  constraints for transactionsUIView
+                transactionsUIView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                transactionsUIView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                transactionsUIView.topAnchor.constraint(equalTo: advertCollectionView.bottomAnchor, constant: 10),
+                transactionsUIView.heightAnchor.constraint(equalToConstant: 180),
+                //  constraints for noTransactionsImage
+                noTransactionsImage.topAnchor.constraint(equalTo: transactionsUIView.topAnchor, constant: 30),
+                noTransactionsImage.centerXAnchor.constraint(equalTo: transactionsUIView.centerXAnchor),
+                //  constraints for noTranscationsyetLabel
+                noTranscationsyetLabel.topAnchor.constraint(equalTo: noTransactionsImage.bottomAnchor, constant: 10),
+                noTranscationsyetLabel.centerXAnchor.constraint(equalTo: transactionsUIView.centerXAnchor),
+                //  constraints for chooseAnOptionToStart
+                chooseAnOptionToStart.topAnchor.constraint(equalTo: noTranscationsyetLabel.bottomAnchor, constant: 10),
+                chooseAnOptionToStart.centerXAnchor.constraint(equalTo: transactionsUIView.centerXAnchor),
+                //  constraints for completeYourVerificationButton
+                completeYourVerificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                completeYourVerificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                completeYourVerificationButton.topAnchor.constraint(equalTo: transactionsUIView.bottomAnchor, constant: 10),
+                //  constraints for completeYourVerificationButtonArrow
+                completeYourVerificationButtonArrow.trailingAnchor.constraint(equalTo: completeYourVerificationButton.trailingAnchor, constant: -10),
+                completeYourVerificationButtonArrow.centerYAnchor.constraint(equalTo: completeYourVerificationButton.centerYAnchor),
+                //  constraints for combineOtherViews
+                combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor),
+                combineOtherViews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                combineOtherViews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 //  constraints for
                 //  constraints for
             ])
     }
+}
+
+extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return advertImage.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableCell, for: indexPath) as? AdvertCollectionViewCell else { return UICollectionViewCell() }
+        let images = advertImage[indexPath.item]
+        cell.imageView.image = UIImage(named: images)
+        return cell
+    }
+    
+    
 }

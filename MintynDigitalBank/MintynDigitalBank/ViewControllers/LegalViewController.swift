@@ -9,7 +9,7 @@ import UIKit
 
 class LegalViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
-    let reusableCell = "settingsPageCell"
+    let reusableCell = "legalPageCell"
     let legalData = ["Mintyn Account- Terms & Conditions", "Mintyn Privacy Policy", "Saving Goals- Terms & Conditions"]
     //  Navigation Button
     lazy var navigationBtn: UIButton = {

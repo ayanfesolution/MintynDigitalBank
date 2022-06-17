@@ -27,3 +27,16 @@ func customBoxButton(text: String, image: String) -> UIButton {
     boxButton.widthAnchor.constraint(equalToConstant: 175).isActive = true
     return boxButton
 }
+
+func customfeaturesButton(text: String, image: String) -> UIButton {
+    let boxButton = UIButton(type: .system)
+    let config = UIImage.SymbolConfiguration(pointSize: 25)
+    boxButton.setTitle(text, for: .normal)
+    boxButton.setImage(UIImage(systemName: image, withConfiguration: config), for: .normal)
+    boxButton.layer.cornerRadius = 8
+    boxButton.contentVerticalAlignment = .top
+    boxButton.translatesAutoresizingMaskIntoConstraints = false
+    boxButton.heightAnchor.constraint(equalToConstant: 130).isActive = true
+    boxButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
+    return boxButton
+}
