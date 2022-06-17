@@ -90,6 +90,15 @@
 		042DC33E285C2E59008FB972 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */; };
 		042DC33F285C2E59008FB972 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */; };
 		042DC340285C2E59008FB972 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */; };
+		042DC342285C3887008FB972 /* SettingPageTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */; };
+		042DC343285C3887008FB972 /* SettingPageTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */; };
+		042DC344285C388C008FB972 /* SettingPageTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */; };
+		042DC347285C45F5008FB972 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC346285C45F5008FB972 /* LegalViewController.swift */; };
+		042DC348285C45F5008FB972 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC346285C45F5008FB972 /* LegalViewController.swift */; };
+		042DC349285C45F5008FB972 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC346285C45F5008FB972 /* LegalViewController.swift */; };
+		042DC34B285C4640008FB972 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34A285C4640008FB972 /* SystemViewController.swift */; };
+		042DC34C285C4640008FB972 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34A285C4640008FB972 /* SystemViewController.swift */; };
+		042DC34D285C4640008FB972 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34A285C4640008FB972 /* SystemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +156,9 @@
 		042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTabBarViewController.swift; sourceTree = "<group>"; };
 		042DC339285C2E44008FB972 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
+		042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingPageTableViewModel.swift; path = MintynDigitalBank/ViewControllers/CustomViews/SettingPageTableViewModel.swift; sourceTree = SOURCE_ROOT; };
+		042DC346285C45F5008FB972 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		042DC34A285C4640008FB972 /* SystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +251,12 @@
 			children = (
 				042DC330285BA148008FB972 /* CustomViews */,
 				042DC2A7285B5B3F008FB972 /* WelcomeScreenViewController.swift */,
+				042DC34A285C4640008FB972 /* SystemViewController.swift */,
 				042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */,
 				042DC331285BAC8A008FB972 /* LoginViewController.swift */,
 				042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */,
 				042DC339285C2E44008FB972 /* HomePageViewController.swift */,
+				042DC346285C45F5008FB972 /* LegalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +281,7 @@
 		042DC2D7285B6DAB008FB972 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -513,10 +528,13 @@
 				042DC2A8285B5B3F008FB972 /* WelcomeScreenViewController.swift in Sources */,
 				042DC33E285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC2DE285B74EA008FB972 /* CustomColors.swift in Sources */,
+				042DC347285C45F5008FB972 /* LegalViewController.swift in Sources */,
 				042DC2F8285B9B16008FB972 /* CustomFonts.swift in Sources */,
 				042DC2A4285B5B3F008FB972 /* AppDelegate.swift in Sources */,
+				042DC342285C3887008FB972 /* SettingPageTableViewModel.swift in Sources */,
 				042DC332285BAC8A008FB972 /* LoginViewController.swift in Sources */,
 				042DC336285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
+				042DC34B285C4640008FB972 /* SystemViewController.swift in Sources */,
 				042DC2E2285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2DA285B6DE7008FB972 /* CustomGradient.swift in Sources */,
 				042DC33A285C2E44008FB972 /* HomePageViewController.swift in Sources */,
@@ -535,8 +553,11 @@
 				042DC33B285C2E44008FB972 /* HomePageViewController.swift in Sources */,
 				042DC33F285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC337285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
+				042DC348285C45F5008FB972 /* LegalViewController.swift in Sources */,
 				042DC2DF285B74EA008FB972 /* CustomColors.swift in Sources */,
+				042DC34C285C4640008FB972 /* SystemViewController.swift in Sources */,
 				042DC2BB285B5B42008FB972 /* MintynDigitalBankTests.swift in Sources */,
+				042DC343285C3887008FB972 /* SettingPageTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,10 +566,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				042DC340285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
+				042DC344285C388C008FB972 /* SettingPageTableViewModel.swift in Sources */,
 				042DC334285BAC8A008FB972 /* LoginViewController.swift in Sources */,
 				042DC2C7285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift in Sources */,
+				042DC349285C45F5008FB972 /* LegalViewController.swift in Sources */,
 				042DC33C285C2E44008FB972 /* HomePageViewController.swift in Sources */,
 				042DC2DC285B6DE8008FB972 /* CustomGradient.swift in Sources */,
+				042DC34D285C4640008FB972 /* SystemViewController.swift in Sources */,
 				042DC2E4285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2FA285B9B16008FB972 /* CustomFonts.swift in Sources */,
 				042DC2E0285B74EA008FB972 /* CustomColors.swift in Sources */,
