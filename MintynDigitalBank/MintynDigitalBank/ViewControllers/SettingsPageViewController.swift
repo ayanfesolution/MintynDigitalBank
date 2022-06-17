@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsPageViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
+    let accountSetting = SettingsTimeTableList.getListOfMeal()
     // Header Title
     lazy var navTitleHeader: UILabel = {
         let navTitle = UILabel()
