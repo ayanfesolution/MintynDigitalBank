@@ -297,155 +297,226 @@ class HomePageViewController: UIViewController {
         navBtn.tintColor = UIColor.CustomColor.textColorGray
         return navBtn
     }()
+    // MARK: - Actions Buttons
+    // transferButton
+    lazy var transferButton: UIView = {
+       let button = customfeaturesButton(text: "Transfer", image: "arrow.left.arrow.right.square")
+        return button
+    }()
+    // topUpButton
+    lazy var topUpButton: UIView = {
+       let button = customfeaturesButton(text: "Top Up", image: "hourglass.badge.plus")
+        return button
+    }()
+    // payBillButton
+    lazy var payBillButton: UIView = {
+       let button = customfeaturesButton(text: "Pay Bill", image: "rectangle.portrait.and.arrow.right.fill")
+        return button
+    }()
+    // saveMoneyButton
+    lazy var saveMoneyButton: UIView = {
+       let button = customfeaturesButton(text: "Save \nMoney", image: "shippingbox.fill")
+        return button
+    }()
+    // mintynInvestButton
+    lazy var mintynInvestButton: UIView = {
+       let button = customfeaturesButton(text: "Mintyn \nInvest", image: "chart.line.uptrend.xyaxis.circle.fill")
+        return button
+    }()
+    // loanButton
+    lazy var loanButton: UIView = {
+       let button = customfeaturesButton(text: "Loan", image: "person.text.rectangle.fill")
+        return button
+    }()
+    // businessAccountButton
+    lazy var businessAccountButton: UIView = {
+       let button = customfeaturesButton(text: "Business \nAccount", image: "bag.fill.badge.plus")
+        return button
+    }()
+    // moreButton
+    lazy var moreButton: UIView = {
+       let button = customfeaturesButton(text: "More", image: "square.grid.3x1.below.line.grid.1x2.fill")
+        return button
+    }()
+  //MARK: - The StackView for Action Buttons
+    // upperHorizonatalStackView
+    lazy var upperHorizonatalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(transferButton)
+        stackView.addArrangedSubview(topUpButton)
+        stackView.addArrangedSubview(payBillButton)
+        stackView.addArrangedSubview(saveMoneyButton)
+        return stackView
+    }()
+    // lowerHorizonatalStackView
+    lazy var lowerHorizonatalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(mintynInvestButton)
+        stackView.addArrangedSubview(loanButton)
+        stackView.addArrangedSubview(businessAccountButton)
+        stackView.addArrangedSubview(moreButton)
+        return stackView
+    }()
+    // actionsButtonStackView
+    lazy var actionsButtonStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(upperHorizonatalStackView)
+        stackView.addArrangedSubview(lowerHorizonatalStackView)
+        return stackView
+    }()
+    // mintnyInvestDetailsAction
+    lazy var mintnyInvestDetailsAction: UIButton = {
+        let button = UIButton(type: .custom)
+        button.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        return button
+    }()
+    // savingsGoalsAction
+    lazy var savingsGoalsAction: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        return button
+    }()
+    // investAndSavingsActionStackView
+    lazy var investAndSavingsActionStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalCentering
+        stackView.backgroundColor = .clear
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(mintnyInvestDetailsAction)
+        stackView.addArrangedSubview(savingsGoalsAction)
+        return stackView
+    }()
+    // mintynMarketplaceButton
+    lazy var mintynMarketplaceButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
+        button.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    // mintnyInvestDetailsActionTitle
+    lazy var mintnyInvestDetailsActionTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Mintyn Invest"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    // mintnyInvestDetailsActionTitle
+    lazy var mintnyInvestDetailsActionSubTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Start investing towards that life goals with a savings plans that puts you in control."
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    // savingsGoalsActionTitle
+    lazy var savingsGoalsActionTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Saving Goals"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    // savingsGoalsActionSubTitle
+    lazy var savingsGoalsActionSubTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Start saving towards that life goals with a savings plans that puts you in control"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    // mintynMarketplaceButtonTitle
+    lazy var mintynMarketplaceButtonTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Mintyn Marketplace"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    // mintynMarketplaceButtonSubTitle
+    lazy var mintynMarketplaceButtonSubTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Purchase products for your store easily."
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 11)
+        label.textColor = UIColor.CustomColor.textColorGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    // mintnyInvestDetailsActionIconLeft
+    lazy var mintnyInvestDetailsActionIconLeft: UIImageView = {
+       let image = UIImageView()
+        let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
+        image.image = UIImage(systemName: "chart.xyaxis.line", withConfiguration: config)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = UIColor.CustomColor.primaryGoldColor
+        return image
+    }()
+    // mintnyInvestDetailsActionIconRight
+    lazy var mintnyInvestDetailsActionIconRight: UIImageView = {
+       let image = UIImageView()
+        let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
+        image.image = UIImage(systemName: "arrow.forward.circle.fill", withConfiguration: config)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = UIColor.CustomColor.textColorGray
+        return image
+    }()
+    // savingsGoalsActionIconLeft
+    lazy var savingsGoalsActionIconLeft: UIImageView = {
+       let image = UIImageView()
+        let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
+        image.image = UIImage(systemName: "shippingbox.fill", withConfiguration: config)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = UIColor.CustomColor.primaryGoldColor
+        return image
+    }()
+    // savingsGoalsActionIconRight
+    lazy var savingsGoalsActionIconRight: UIImageView = {
+       let image = UIImageView()
+        let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
+        image.image = UIImage(systemName: "arrow.forward.circle.fill", withConfiguration: config)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = UIColor.CustomColor.textColorGray
+        return image
+    }()
+    lazy var mintynMarketplaceButtonIcon: UIImageView = {
+       let image = UIImageView()
+        let config = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold)
+        image.image = UIImage(systemName: "house.fill", withConfiguration: config)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = UIColor.CustomColor.primaryGoldColor
+        return image
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
         setUPViews()
     }
-    func setUPViews() {
-        let headerLists = [logoImageView, notificationButton]
-        for headerList in headerLists {
-            headerView.addSubview(headerList)
-        }
-        let items = [headerView, straightLine, homePageView, addActionFloatingButton]
-        for item in items {
-            view.addSubview(item)
-        }
-        let scrollLists = [profileDetailsView, combineOtherViews, accountBalanceDetailsView, ledgerBalance, ledgerAmountLabel, hideBalanceSwitch, hideBalanceLabel, straightLineTwo, advertCollectionView, transactionsUIView, completeYourVerificationButton, completeYourVerificationButtonArrow]
-        for scrollList in scrollLists {
-            homePageView.addSubview(scrollList)
-        }
-        let profileViewItems = [profileCopyButton, profileDetailsDropDownButton, profileAccountType, profileAccountNumber, profileAccountName, profileImage]
-        for profileViewItem in profileViewItems {
-            profileDetailsView.addSubview(profileViewItem)
-        }
-        let accountBalanceViewLists = [avaliableBalance, mainAmountLabel, fundAccountButton]
-        for accountBalanceViewList in accountBalanceViewLists {
-            accountBalanceDetailsView.addSubview(accountBalanceViewList)
-        }
-        let noTranscationsItems = [noTransactionsImage, noTranscationsyetLabel, chooseAnOptionToStart]
-        for noTranscationsItem in noTranscationsItems {
-            transactionsUIView.addSubview(noTranscationsItem)
-        }
-            //MARK: - Setting Up Constraints for the UIViews
-            NSLayoutConstraint.activate([
-                addActionFloatingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                addActionFloatingButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-                //  constraints for headerView
-                headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                //  constraints for logoView
-                logoImageView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
-                logoImageView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
-                logoImageView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-                //  constraints for notificationButton
-                notificationButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
-                notificationButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
-                notificationButton.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
-                //  constraints for headerView
-                straightLine.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-                straightLine.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                straightLine.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                //  constraints for homePageView
-                homePageView.topAnchor.constraint(equalTo: straightLine.bottomAnchor),
-                homePageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                homePageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                homePageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                //  constraints for combineOtherViews
-                combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor),
-                combineOtherViews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                combineOtherViews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                combineOtherViews.topAnchor.constraint(equalTo: completeYourVerificationButton.bottomAnchor, constant: 20),
-                combineOtherViews.heightAnchor.constraint(equalToConstant: 200),
-                //  constraints for profileImage
-                profileImage.topAnchor.constraint(equalTo: profileDetailsView.topAnchor),
-                profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                //  constraints for profileAccountName
-                profileAccountName.topAnchor.constraint(equalTo: profileDetailsView.topAnchor, constant: 25),
-                profileAccountName.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
-                //  constraints for profileAccountType
-                profileAccountType.topAnchor.constraint(equalTo: profileAccountName.bottomAnchor),
-                profileAccountType.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20),
-                //  constraints for profileAccountNumber
-                profileAccountNumber.topAnchor.constraint(equalTo: profileAccountName.bottomAnchor),
-                profileAccountNumber.leadingAnchor.constraint(equalTo: profileAccountType.trailingAnchor, constant: 5),
-                //  constraints for profileCopyButton
-                profileCopyButton.trailingAnchor.constraint(equalTo: profileDetailsView.trailingAnchor, constant: -20),
-                profileCopyButton.topAnchor.constraint(equalTo: profileDetailsView.topAnchor, constant: 25),
-                //  constraints for profileDetailsDropDownButton
-                profileDetailsDropDownButton.leadingAnchor.constraint(equalTo: profileAccountNumber.trailingAnchor, constant: 10),
-                profileDetailsDropDownButton.topAnchor.constraint(equalTo: profileDetailsView.topAnchor, constant: 30),
-                //  constraints for profileDetailsView
-                profileDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                profileDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                profileDetailsView.heightAnchor.constraint(equalToConstant: 100),
-                profileDetailsView.topAnchor.constraint(equalTo: homePageView.topAnchor),
-                //  constraints for accountBalanceDetailsView
-                accountBalanceDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                accountBalanceDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                accountBalanceDetailsView.topAnchor.constraint(equalTo: profileDetailsView.bottomAnchor),
-                //  constraints for avaliableBalance
-                avaliableBalance.topAnchor.constraint(equalTo: accountBalanceDetailsView.topAnchor, constant: 40),
-                avaliableBalance.leadingAnchor.constraint(equalTo: accountBalanceDetailsView.leadingAnchor, constant: 20),
-                //  constraints for mainAmountLabel
-                mainAmountLabel.topAnchor.constraint(equalTo: avaliableBalance.bottomAnchor, constant: 5),
-                mainAmountLabel.leadingAnchor.constraint(equalTo: accountBalanceDetailsView.leadingAnchor, constant: 20),
-                //  constraints for
-                fundAccountButton.centerYAnchor.constraint(equalTo: accountBalanceDetailsView.centerYAnchor),
-                fundAccountButton.trailingAnchor.constraint(equalTo: accountBalanceDetailsView.trailingAnchor, constant: -20),
-                fundAccountButton.heightAnchor.constraint(equalToConstant: 45),
-                fundAccountButton.widthAnchor.constraint(equalToConstant: 130),
-                //  constraints for ledgerBalance
-                ledgerBalance.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 15),
-                ledgerBalance.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-                //  constraints for ledgerAmountLabel
-                ledgerAmountLabel.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 15),
-                ledgerAmountLabel.leadingAnchor.constraint(equalTo: ledgerBalance.trailingAnchor, constant: 5),
-                //  constraints for hideBalanceLabel
-                hideBalanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-                hideBalanceLabel.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 17),
-                //  constraints for hideBalanceSwitch
-                hideBalanceSwitch.topAnchor.constraint(equalTo: accountBalanceDetailsView.bottomAnchor, constant: 12),
-                hideBalanceSwitch.trailingAnchor.constraint(equalTo: hideBalanceLabel.leadingAnchor, constant: -5),
-                //  constraints for straightLineTwo
-                straightLineTwo.topAnchor.constraint(equalTo: hideBalanceSwitch.bottomAnchor, constant: 12),
-                straightLineTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                straightLineTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                //  constraints for advertCollectionView
-                advertCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                advertCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                advertCollectionView.topAnchor.constraint(equalTo: straightLineTwo.bottomAnchor),
-                advertCollectionView.heightAnchor.constraint(equalToConstant: 160),
-                //  constraints for transactionsUIView
-                transactionsUIView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                transactionsUIView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                transactionsUIView.topAnchor.constraint(equalTo: advertCollectionView.bottomAnchor, constant: 10),
-                transactionsUIView.heightAnchor.constraint(equalToConstant: 180),
-                //  constraints for noTransactionsImage
-                noTransactionsImage.topAnchor.constraint(equalTo: transactionsUIView.topAnchor, constant: 30),
-                noTransactionsImage.centerXAnchor.constraint(equalTo: transactionsUIView.centerXAnchor),
-                //  constraints for noTranscationsyetLabel
-                noTranscationsyetLabel.topAnchor.constraint(equalTo: noTransactionsImage.bottomAnchor, constant: 10),
-                noTranscationsyetLabel.centerXAnchor.constraint(equalTo: transactionsUIView.centerXAnchor),
-                //  constraints for chooseAnOptionToStart
-                chooseAnOptionToStart.topAnchor.constraint(equalTo: noTranscationsyetLabel.bottomAnchor, constant: 10),
-                chooseAnOptionToStart.centerXAnchor.constraint(equalTo: transactionsUIView.centerXAnchor),
-                //  constraints for completeYourVerificationButton
-                completeYourVerificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                completeYourVerificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                completeYourVerificationButton.topAnchor.constraint(equalTo: transactionsUIView.bottomAnchor, constant: 10),
-                //  constraints for completeYourVerificationButtonArrow
-                completeYourVerificationButtonArrow.trailingAnchor.constraint(equalTo: completeYourVerificationButton.trailingAnchor, constant: -10),
-                completeYourVerificationButtonArrow.centerYAnchor.constraint(equalTo: completeYourVerificationButton.centerYAnchor),
-                //  constraints for combineOtherViews
-                combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor),
-                combineOtherViews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                combineOtherViews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                //  constraints for
-                //  constraints for
-            ])
-    }
+
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -459,6 +530,4 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         cell.imageView.image = UIImage(named: images)
         return cell
     }
-    
-    
 }
