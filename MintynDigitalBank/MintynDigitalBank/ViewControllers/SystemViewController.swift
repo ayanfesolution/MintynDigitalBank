@@ -93,7 +93,7 @@ extension SystemViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell, for: indexPath)
+        
         switch indexPath.row {
         case 0:
             UIApplication.shared.windows.forEach { windowSence in
