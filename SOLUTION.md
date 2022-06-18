@@ -1,6 +1,7 @@
 Since refactoring involves editing and cleaning up previously written software code without changing the function of the code at all. The basic purpose of code refactoring is to make the code more efficient and maintainable. 
 
 If i had have more time, I would have been able to do the following for the refactors / code organization / enhancements 
+
 ###1. I would have create more reusable class to be used all through the app to reduced the lines of code to write. This is to apply the DRY principle
 
 ###2. I would have create the project on MVVM archethetural pattern. 
