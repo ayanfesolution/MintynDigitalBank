@@ -14,4 +14,6 @@ struct User {
     let email: String
     let accountBalance: String
     let ledgerBalance: String
+    let accountType: String
+    let accountNumber: String
 }

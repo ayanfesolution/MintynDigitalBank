@@ -62,12 +62,10 @@ extension HomePageViewController {
                 homePageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 homePageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 //  constraints for combineOtherViews
-                combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor),
+                combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor, constant: 10),
                 combineOtherViews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 combineOtherViews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 combineOtherViews.topAnchor.constraint(equalTo: completeYourVerificationButton.bottomAnchor, constant: 20),
-  //              combineOtherViews.heightAnchor.constraint(equalToConstant: 200),
-                //  constraints for profileImage
                 profileImage.topAnchor.constraint(equalTo: profileDetailsView.topAnchor),
                 profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 //  constraints for profileAccountName
@@ -147,10 +145,6 @@ extension HomePageViewController {
                 //  constraints for completeYourVerificationButtonArrow
                 completeYourVerificationButtonArrow.trailingAnchor.constraint(equalTo: completeYourVerificationButton.trailingAnchor, constant: -10),
                 completeYourVerificationButtonArrow.centerYAnchor.constraint(equalTo: completeYourVerificationButton.centerYAnchor),
-                //  constraints for combineOtherViews
-//                combineOtherViews.bottomAnchor.constraint(equalTo: homePageView.bottomAnchor),
-//                combineOtherViews.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                combineOtherViews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 //  constraints for actionsButtonStackView
                 actionsButtonStackView.topAnchor.constraint(equalTo: combineOtherViews.topAnchor, constant: 20),
                 actionsButtonStackView.leadingAnchor.constraint(equalTo: combineOtherViews.leadingAnchor, constant: 20),

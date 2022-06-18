@@ -6,7 +6,7 @@
 //
 import Foundation
 protocol NetworkService {
-    func login(email: String, password: String, completion: @escaping (Bool) -> Void)
+    func login(phoneNumber: String, password: String, completion: @escaping (Bool) -> Void)
     func getLoggedInUser() -> User?
 }
 class NetworkManager: NetworkService {
@@ -33,17 +33,20 @@ class NetworkManager: NetworkService {
     // MARK: - Initializer
     private init() {}
     // MARK: - Resources
-    func login(email: String,
+    func login(phoneNumber: String,
                password: String,
                completion: @escaping (Bool) -> Void
     ) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            if email.elementsEqual("test@test.com") && password.elementsEqual("password") {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            if phoneNumber.elementsEqual("+2347031276982") && password.elementsEqual("1234") {
                 self?.user = User(firstName: "Afolabi",
                                   lastName: "Ayanfe",
                                   age: 42, email: "test@test.com",
                                   accountBalance: "#22100",
-                                  ledgerBalance: "#23000")
+                                  ledgerBalance: "#23000",
+                                  accountType: "Individual",
+                                  accountNumber: "1101202033"
+                )
                 completion(true)
             } else {
                 self?.user = nil

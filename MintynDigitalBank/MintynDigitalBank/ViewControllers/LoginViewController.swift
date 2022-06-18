@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
+    let network = NetworkManager.shared
     //  Navigation Button
     lazy var navigationBtn: UIButton = {
         let navBtn = UIButton()
@@ -101,7 +102,7 @@ class LoginViewController: UIViewController {
     }()
     // phoneNumberLabel
     lazy var phoneNumberLabel: UILabel = {
-       let phoneNumber = UILabel()
+        let phoneNumber = UILabel()
         phoneNumber.text = "Phone Number"
         phoneNumber.translatesAutoresizingMaskIntoConstraints = false
         phoneNumber.textColor = .white
@@ -111,43 +112,46 @@ class LoginViewController: UIViewController {
     }()
     // phoneNumberTextField
     lazy var phoneNumberTextField: UITextField = {
-       let phoneNumber = UITextField()
+        let phoneNumber = UITextField()
         phoneNumber.leftViewMode = .always
-        let iconButton = UIButton(frame: CGRect(x: 10, y: 5, width: 90, height: 20))
+        phoneNumber.delegate = self
+        let iconButton = UIButton(frame: CGRect(x: 0, y: 5, width: 90, height: 20))
         iconButton.setImage(UIImage(named: "nigeriaIcon"), for: .normal)
-        iconButton.setTitle("  +234", for: .normal)
         let iconContainerView: UIView = UIView(frame:
-                          CGRect(x: 10, y: 10, width: 110, height: 30))
+                                                CGRect(x: 10, y: 10, width: 80, height: 30))
         iconContainerView.addSubview(iconButton)
         phoneNumber.heightAnchor.constraint(equalToConstant: 45).isActive = true
         phoneNumber.leftView = iconContainerView
+        phoneNumber.text = "+234"
         phoneNumber.placeholder = "82 123 4567"
         phoneNumber.textColor = UIColor.lightText
         phoneNumber.keyboardType = .numberPad
         phoneNumber.layer.cornerRadius = 8
         phoneNumber.font = UIFont.systemFont(ofSize: 21, weight: .bold)
         phoneNumber.backgroundColor = UIColor.CustomColor.textFieldBackgroundColor
+        phoneNumber.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         phoneNumber.translatesAutoresizingMaskIntoConstraints = false
         return phoneNumber
     }()
     // passwordLabel
     lazy var passwordLabel: UILabel = {
-       let  password = UILabel()
-     password.text = "Password"
-     password.translatesAutoresizingMaskIntoConstraints = false
-     password.textColor = .white
-     password.font = UIFont.systemFont(ofSize: 16)
-    return password
+        let  password = UILabel()
+        password.text = "Password"
+        password.translatesAutoresizingMaskIntoConstraints = false
+        password.textColor = .white
+        password.font = UIFont.systemFont(ofSize: 16)
+        return password
     }()
     // passwordTextField
     lazy var passwordTextField: UITextField = {
-       let passwordTextField = UITextField()
+        let passwordTextField = UITextField()
         passwordTextField.heightAnchor.constraint(equalToConstant: 45).isActive = true
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.delegate = self
         passwordTextField.layer.cornerRadius = 8
         passwordTextField.backgroundColor = UIColor.CustomColor.textFieldBackgroundColor
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        
+        passwordTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         return passwordTextField
     }()
     // reviewPasswordTextButton
@@ -178,12 +182,12 @@ class LoginViewController: UIViewController {
     }()
     // rememberMeLabel
     lazy var rememberMeLabel: UILabel = {
-       let  label = UILabel()
-     label.text = "Remember me"
-     label.translatesAutoresizingMaskIntoConstraints = false
-     label.textColor = .white
-     label.font = UIFont.systemFont(ofSize: 18)
-    return label
+        let  label = UILabel()
+        label.text = "Remember me"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 18)
+        return label
     }()
     // forgotPasswordButton
     lazy var forgotPasswordButton: UIButton = {
@@ -205,16 +209,17 @@ class LoginViewController: UIViewController {
     }()
     // loginButton
     lazy var loginButton: UIButton = {
-       let button = customAuthButton(text: "Login")
+        let button = customAuthButton(text: "Login")
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = customFont(font: .robotoBlack, size: 16)
         button.backgroundColor = UIColor.CustomColor.primaryGoldColor
         button.addTarget(self, action: #selector(implementLogin), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     // poweredBYLabel
     lazy var poweredBYLabel: UILabel = {
-       let poweredBY = UILabel()
+        let poweredBY = UILabel()
         poweredBY.text = "Powered by FINEX MFB"
         poweredBY.translatesAutoresizingMaskIntoConstraints = false
         poweredBY.textColor = .white
@@ -224,7 +229,7 @@ class LoginViewController: UIViewController {
     }()
     // versionLabel
     lazy var versionLabel: UILabel = {
-       let version = UILabel()
+        let version = UILabel()
         version.text = "Version 1.2.70"
         version.translatesAutoresizingMaskIntoConstraints = false
         version.textColor = .white
@@ -238,16 +243,65 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .black
         
     }
+//    func presentError() {
+//        let title = "Error"
+//        let alert = UIAlertController(title: <#T##String?#>, message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>)
+//    }
+    @objc func handleTextChange() {
+        let phoneNumber = phoneNumberTextField.text!
+        let passwordText = passwordTextField.text!
+        let isFormFilled = !phoneNumber.isEmpty && !passwordText.isEmpty
+        if isFormFilled {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+        }
+    }
     @objc func returnHome() {
         dismiss(animated: true)
     }
     @objc func implementLogin() {
-     let nextVC = MainScreenTabBarViewController()
-        nextVC.modalPresentationStyle = .fullScreen
-        present(nextVC, animated: true)
+        guard let phone = phoneNumberTextField.text,
+              let password = passwordTextField.text
+        else {
+            return
+        }
+        
+        network.login(phoneNumber: phone, password: password, completion: { [weak self] success in
+            switch success {
+            case true:
+                let nextVC = MainScreenTabBarViewController()
+                nextVC.modalPresentationStyle = .fullScreen
+                self?.present(nextVC, animated: true)
+            case false:
+                let config = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold)
+                let image = UIImageView(frame: CGRect(x: 170, y: 20, width: 50, height: 50))
+                let item = UIImage(systemName: "face.smiling", withConfiguration: config)
+                image.tintColor = .red.withAlphaComponent(0.34)
+                image.image = item
+                let title = " \n\n \n\nSomething went wrong \n\n"
+                let message = "Enter correct phone number and password. The demo number is +2347031276982 and password is 1234"
+                let alert = UIAlertController(title: title,
+                                              message: message, preferredStyle: .actionSheet)
+                alert.view.addSubview(image)
+                alert.setMessage(font: UIFont.systemFont(ofSize: 15, weight: .bold), color: .brown)
+                alert.setTitle(font: UIFont.systemFont(ofSize: 15, weight: .bold), color: .brown)
+                alert.overrideUserInterfaceStyle = .dark
+                alert.addAction(UIAlertAction(title: "Got it", style: .cancel))
+                self?.present(alert, animated: true, completion: nil)
+                print("There was an error signin in...")
+            }
+        })
+        
     }
     @objc func reviewPassword() {
-        
+        passwordTextField.isSecureTextEntry.toggle()
+        switch passwordTextField.isSecureTextEntry {
+        case true:
+            passwordTextField.isSecureTextEntry = true
+        case false:
+            passwordTextField.isSecureTextEntry = false
+        }
     }
     @objc func checkmarkRememberMe() {
         switch rememberMeBoxButton.currentImage {
@@ -266,7 +320,7 @@ class LoginViewController: UIViewController {
         for item in items {
             bottomUIView.addSubview(item)
         }
-       
+        
         //MARK: - Setting Up Constraints for the UIViews
         NSLayoutConstraint.activate([
             //  constraints for Navigation Button
@@ -329,5 +383,13 @@ class LoginViewController: UIViewController {
             versionLabel.centerXAnchor.constraint(equalTo: bottomUIView.centerXAnchor),
             versionLabel.topAnchor.constraint(equalTo: poweredBYLabel.bottomAnchor, constant: 10)
         ])
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        phoneNumberTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
     }
 }
