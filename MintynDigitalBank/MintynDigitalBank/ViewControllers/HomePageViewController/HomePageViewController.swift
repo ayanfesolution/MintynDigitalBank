@@ -525,6 +525,17 @@ class HomePageViewController: UIViewController {
         }
         setUPViews()
     }
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateViewForCurrentTraitCollection()
+    }
+    private func updateViewForCurrentTraitCollection() {
+        if traitCollection.userInterfaceStyle == .dark {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
+        }
+    }
     @objc func switchStateDidChange() {
             if (hideBalanceSwitch.isOn == true){
                 mainAmountLabel.text = "** . **"
