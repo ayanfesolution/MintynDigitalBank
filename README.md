@@ -6,6 +6,9 @@ To test the app run it on a simulator and the use the following Mock Login Detai
 # Phone Number: +2347031276982
 # Password: 1234
 
+Watch the video presentation through this link
+https://drive.google.com/file/d/18YVscv2tDy5sc1Z1XitYMigsDMECP7Ww/view?usp=sharing
+
 Kindly find the screenshot of the work
 
 <img width="401" alt="Screenshot 2022-06-18 at 13 18 09" src="https://user-images.githubusercontent.com/84634788/174437278-9c53aef2-4279-47ba-ab89-83042ca86d47.png">
