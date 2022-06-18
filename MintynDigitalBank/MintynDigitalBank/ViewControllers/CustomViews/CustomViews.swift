@@ -27,3 +27,32 @@ func customBoxButton(text: String, image: String) -> UIButton {
     boxButton.widthAnchor.constraint(equalToConstant: 175).isActive = true
     return boxButton
 }
+
+func customfeaturesButton(text: String, image: String) -> UIView {
+    
+    
+    lazy var boxButton: UIStackView = {
+        let boxButton = UIStackView()
+        boxButton.axis = .vertical
+        boxButton.alignment = .center
+        boxButton.translatesAutoresizingMaskIntoConstraints = false
+        boxButton.backgroundColor = UIColor.white
+        let button = UIButton(type: .system)
+        boxButton.addArrangedSubview(button)
+        let config = UIImage.SymbolConfiguration(pointSize: 25)
+        button.setImage(UIImage(systemName: image, withConfiguration: config), for: .normal)
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = UIColor.CustomColor.primaryGoldColor
+        let actionsText = UILabel()
+        actionsText.text = text
+        actionsText.numberOfLines = 0
+        actionsText.translatesAutoresizingMaskIntoConstraints = false
+        boxButton.addArrangedSubview(actionsText)
+        return boxButton
+    }()
+    return boxButton
+}
+
+

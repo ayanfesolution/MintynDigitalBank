@@ -99,6 +99,12 @@
 		042DC34B285C4640008FB972 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34A285C4640008FB972 /* SystemViewController.swift */; };
 		042DC34C285C4640008FB972 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34A285C4640008FB972 /* SystemViewController.swift */; };
 		042DC34D285C4640008FB972 /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34A285C4640008FB972 /* SystemViewController.swift */; };
+		042DC350285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34F285C8949008FB972 /* AdvertCollectionViewCell.swift */; };
+		042DC351285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34F285C8949008FB972 /* AdvertCollectionViewCell.swift */; };
+		042DC352285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34F285C8949008FB972 /* AdvertCollectionViewCell.swift */; };
+		04B77EAC285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */; };
+		04B77EAD285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */; };
+		04B77EAE285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +165,8 @@
 		042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingPageTableViewModel.swift; path = MintynDigitalBank/ViewControllers/CustomViews/SettingPageTableViewModel.swift; sourceTree = SOURCE_ROOT; };
 		042DC346285C45F5008FB972 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		042DC34A285C4640008FB972 /* SystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
+		042DC34F285C8949008FB972 /* AdvertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCollectionViewCell.swift; sourceTree = "<group>"; };
+		04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePageController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +263,7 @@
 				042DC33D285C2E59008FB972 /* SettingsPageViewController.swift */,
 				042DC331285BAC8A008FB972 /* LoginViewController.swift */,
 				042DC335285C2DEC008FB972 /* MainScreenTabBarViewController.swift */,
-				042DC339285C2E44008FB972 /* HomePageViewController.swift */,
+				042DC34E285C890C008FB972 /* HomePageViewController */,
 				042DC346285C45F5008FB972 /* LegalViewController.swift */,
 			);
 			path = ViewControllers;
@@ -342,6 +350,16 @@
 				042DC2E1285B9629008FB972 /* CustomViews.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		042DC34E285C890C008FB972 /* HomePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042DC339285C2E44008FB972 /* HomePageViewController.swift */,
+				042DC34F285C8949008FB972 /* AdvertCollectionViewCell.swift */,
+				04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */,
+			);
+			path = HomePageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +553,8 @@
 				042DC332285BAC8A008FB972 /* LoginViewController.swift in Sources */,
 				042DC336285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
 				042DC34B285C4640008FB972 /* SystemViewController.swift in Sources */,
+				042DC350285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */,
+				04B77EAC285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */,
 				042DC2E2285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2DA285B6DE7008FB972 /* CustomGradient.swift in Sources */,
 				042DC33A285C2E44008FB972 /* HomePageViewController.swift in Sources */,
@@ -551,8 +571,10 @@
 				042DC2E3285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2F9285B9B16008FB972 /* CustomFonts.swift in Sources */,
 				042DC33B285C2E44008FB972 /* HomePageViewController.swift in Sources */,
+				04B77EAD285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */,
 				042DC33F285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC337285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
+				042DC351285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */,
 				042DC348285C45F5008FB972 /* LegalViewController.swift in Sources */,
 				042DC2DF285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC34C285C4640008FB972 /* SystemViewController.swift in Sources */,
@@ -565,6 +587,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042DC352285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */,
+				04B77EAE285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */,
 				042DC340285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC344285C388C008FB972 /* SettingPageTableViewModel.swift in Sources */,
 				042DC334285BAC8A008FB972 /* LoginViewController.swift in Sources */,
