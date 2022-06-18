@@ -135,7 +135,9 @@ class HomePageViewController: UIViewController {
     lazy var combineOtherViews: UIView = {
         let combineOtherViews = UIView()
         combineOtherViews.layer.cornerRadius = 40
-        combineOtherViews.backgroundColor = .white
+        combineOtherViews.layer.shadowRadius = 2
+        combineOtherViews.layer.borderColor = UIColor.systemFill.cgColor
+        combineOtherViews.backgroundColor = .systemBackground
         combineOtherViews.translatesAutoresizingMaskIntoConstraints = false
         return combineOtherViews
     }()
@@ -516,7 +518,11 @@ class HomePageViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
+        if self.overrideUserInterfaceStyle == .dark {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
+        }
         setUPViews()
     }
     @objc func switchStateDidChange() {

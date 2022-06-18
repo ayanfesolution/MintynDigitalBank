@@ -243,10 +243,6 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .black
         
     }
-//    func presentError() {
-//        let title = "Error"
-//        let alert = UIAlertController(title: <#T##String?#>, message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>)
-//    }
     @objc func handleTextChange() {
         let phoneNumber = phoneNumberTextField.text!
         let passwordText = passwordTextField.text!
