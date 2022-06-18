@@ -204,8 +204,10 @@ class HomePageViewController: UIViewController {
     // hideBalanceSwitch
     lazy var hideBalanceSwitch: UISwitch = {
         let hideSwitch = UISwitch()
+        hideSwitch.isOn = false
         hideSwitch.thumbTintColor = UIColor.CustomColor.primaryGoldColor
         hideSwitch.onTintColor = UIColor.clear
+        hideSwitch.addTarget(self, action: #selector(switchStateDidChange), for: .valueChanged)
         hideSwitch.translatesAutoresizingMaskIntoConstraints = false
         return hideSwitch
     }()
@@ -516,6 +518,16 @@ class HomePageViewController: UIViewController {
         view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
         setUPViews()
     }
+    @objc func switchStateDidChange() {
+            if (hideBalanceSwitch.isOn == true){
+                mainAmountLabel.text = "** . **"
+                ledgerAmountLabel.text = "** . **"
+            }
+            else{
+                mainAmountLabel.text = "#2500.00"
+                ledgerAmountLabel.text = "#3300.00"
+            }
+        }
 
 }
 
