@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     struct CustomColor {
-        static let primaryGoldColor = #colorLiteral(red: 0.8536948562, green: 0.6906650662, blue: 0.2981468141, alpha: 1)
+        static let primaryGoldColor = #colorLiteral(red: 0.6976291176, green: 0.5619212, blue: 0.247207591, alpha: 1)
         static let boxLightDarkColor = #colorLiteral(red: 0.1674384773, green: 0.1674384475, blue: 0.1674384475, alpha: 1)
         static let boxDarkColor = #colorLiteral(red: 0.1013579145, green: 0.1013579145, blue: 0.1013579145, alpha: 1)
         static let textColorGray = #colorLiteral(red: 0.4240130186, green: 0.4293810427, blue: 0.4679407477, alpha: 1)

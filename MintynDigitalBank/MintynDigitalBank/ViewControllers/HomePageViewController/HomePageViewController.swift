@@ -11,6 +11,7 @@ class HomePageViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
     let reusableCell = "advertCell"
     let advertImage  = ["advertbannerone", "advertbannertwo"]
+    let user = NetworkManager.shared.getLoggedInUser()
     //  headerview
     lazy var headerView: UIView = {
        let header = UIView()
@@ -85,7 +86,7 @@ class HomePageViewController: UIViewController {
     // profileAccountType
     lazy var profileAccountName: UILabel = {
        let label = UILabel()
-        label.text = "Afolabi Ayanfe"
+        label.text = "\(user?.firstName ?? "") \(user?.lastName ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
@@ -94,7 +95,7 @@ class HomePageViewController: UIViewController {
     // profileAccountType
     lazy var profileAccountType: UILabel = {
        let label = UILabel()
-        label.text = "Individual"
+        label.text = "\(user?.accountType ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
@@ -104,7 +105,7 @@ class HomePageViewController: UIViewController {
     // profileAccountNumber
     lazy var profileAccountNumber: UILabel = {
        let label = UILabel()
-        label.text = ".1101891907 | Tier 1"
+        label.text = ".\(user?.accountNumber ?? "") | Tier 1"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.primaryGoldColor
         label.font = UIFont.systemFont(ofSize: 15)
@@ -158,7 +159,7 @@ class HomePageViewController: UIViewController {
     // amountLabel
     lazy var mainAmountLabel: UILabel = {
        let label = UILabel()
-        label.text = "#2500.00"
+        label.text = "\(user?.accountBalance ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
@@ -186,7 +187,7 @@ class HomePageViewController: UIViewController {
     // amountLabel
     lazy var ledgerAmountLabel: UILabel = {
        let label = UILabel()
-        label.text = "#3300.00"
+        label.text = "\(user?.ledgerBalance ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
         label.font = UIFont.systemFont(ofSize: 15, weight: .heavy)

@@ -10,7 +10,7 @@ import UIKit
 class SystemViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
     let reusableCell = "systemPageCell"
-    let legalData = ["Default", "Light Mode", "Dark Mode"]
+    var legalData = ["Default", "Light Mode", "Dark Mode"]
     //  Navigation Button
     lazy var navigationBtn: UIButton = {
         let navBtn = UIButton()
@@ -82,6 +82,7 @@ extension SystemViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = lists
         cell.textLabel?.textColor = UIColor.CustomColor.textColorGray
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -92,8 +93,7 @@ extension SystemViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
+        systemListTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         switch indexPath.row {
         case 0:
             UIApplication.shared.windows.forEach { windowSence in
@@ -108,7 +108,11 @@ extension SystemViewController: UITableViewDelegate, UITableViewDataSource {
                 windowSence.overrideUserInterfaceStyle = .dark
             }
         default:
-            break
+            return
         }
+    
+}
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        systemListTableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }

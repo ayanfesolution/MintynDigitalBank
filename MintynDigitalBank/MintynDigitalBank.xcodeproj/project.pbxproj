@@ -105,6 +105,15 @@
 		04B77EAC285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */; };
 		04B77EAD285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */; };
 		04B77EAE285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */; };
+		04B77EB0285D7A1100B06B9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAF285D7A1100B06B9B /* NetworkManager.swift */; };
+		04B77EB1285D7A1100B06B9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAF285D7A1100B06B9B /* NetworkManager.swift */; };
+		04B77EB2285D7A1100B06B9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EAF285D7A1100B06B9B /* NetworkManager.swift */; };
+		04B77EB4285D7A3E00B06B9B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EB3285D7A3E00B06B9B /* UserModel.swift */; };
+		04B77EB5285D7A3E00B06B9B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EB3285D7A3E00B06B9B /* UserModel.swift */; };
+		04B77EB6285D7A3E00B06B9B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EB3285D7A3E00B06B9B /* UserModel.swift */; };
+		04B77EB8285DD52B00B06B9B /* UIalertController +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EB7285DD52B00B06B9B /* UIalertController +Extension.swift */; };
+		04B77EB9285DD52B00B06B9B /* UIalertController +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EB7285DD52B00B06B9B /* UIalertController +Extension.swift */; };
+		04B77EBA285DD52B00B06B9B /* UIalertController +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B77EB7285DD52B00B06B9B /* UIalertController +Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +176,9 @@
 		042DC34A285C4640008FB972 /* SystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
 		042DC34F285C8949008FB972 /* AdvertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCollectionViewCell.swift; sourceTree = "<group>"; };
 		04B77EAB285D3E2F00B06B9B /* HomePageController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePageController+Extension.swift"; sourceTree = "<group>"; };
+		04B77EAF285D7A1100B06B9B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		04B77EB3285D7A3E00B06B9B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		04B77EB7285DD52B00B06B9B /* UIalertController +Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIalertController +Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				042DC341285C3887008FB972 /* SettingPageTableViewModel.swift */,
+				04B77EAF285D7A1100B06B9B /* NetworkManager.swift */,
+				04B77EB3285D7A3E00B06B9B /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +314,7 @@
 				042DC2D9285B6DE7008FB972 /* CustomGradient.swift */,
 				042DC2DD285B74EA008FB972 /* CustomColors.swift */,
 				042DC2F7285B9B16008FB972 /* CustomFonts.swift */,
+				04B77EB7285DD52B00B06B9B /* UIalertController +Extension.swift */,
 			);
 			path = CustomFiles;
 			sourceTree = "<group>";
@@ -553,11 +568,14 @@
 				042DC332285BAC8A008FB972 /* LoginViewController.swift in Sources */,
 				042DC336285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
 				042DC34B285C4640008FB972 /* SystemViewController.swift in Sources */,
+				04B77EB0285D7A1100B06B9B /* NetworkManager.swift in Sources */,
 				042DC350285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */,
 				04B77EAC285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */,
 				042DC2E2285B9629008FB972 /* CustomViews.swift in Sources */,
 				042DC2DA285B6DE7008FB972 /* CustomGradient.swift in Sources */,
 				042DC33A285C2E44008FB972 /* HomePageViewController.swift in Sources */,
+				04B77EB4285D7A3E00B06B9B /* UserModel.swift in Sources */,
+				04B77EB8285DD52B00B06B9B /* UIalertController +Extension.swift in Sources */,
 				042DC2A6285B5B3F008FB972 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,8 +594,11 @@
 				042DC337285C2DEC008FB972 /* MainScreenTabBarViewController.swift in Sources */,
 				042DC351285C8949008FB972 /* AdvertCollectionViewCell.swift in Sources */,
 				042DC348285C45F5008FB972 /* LegalViewController.swift in Sources */,
+				04B77EB5285D7A3E00B06B9B /* UserModel.swift in Sources */,
+				04B77EB9285DD52B00B06B9B /* UIalertController +Extension.swift in Sources */,
 				042DC2DF285B74EA008FB972 /* CustomColors.swift in Sources */,
 				042DC34C285C4640008FB972 /* SystemViewController.swift in Sources */,
+				04B77EB1285D7A1100B06B9B /* NetworkManager.swift in Sources */,
 				042DC2BB285B5B42008FB972 /* MintynDigitalBankTests.swift in Sources */,
 				042DC343285C3887008FB972 /* SettingPageTableViewModel.swift in Sources */,
 			);
@@ -591,9 +612,12 @@
 				04B77EAE285D3E2F00B06B9B /* HomePageController+Extension.swift in Sources */,
 				042DC340285C2E59008FB972 /* SettingsPageViewController.swift in Sources */,
 				042DC344285C388C008FB972 /* SettingPageTableViewModel.swift in Sources */,
+				04B77EB2285D7A1100B06B9B /* NetworkManager.swift in Sources */,
 				042DC334285BAC8A008FB972 /* LoginViewController.swift in Sources */,
 				042DC2C7285B5B42008FB972 /* MintynDigitalBankUITestsLaunchTests.swift in Sources */,
+				04B77EBA285DD52B00B06B9B /* UIalertController +Extension.swift in Sources */,
 				042DC349285C45F5008FB972 /* LegalViewController.swift in Sources */,
+				04B77EB6285D7A3E00B06B9B /* UserModel.swift in Sources */,
 				042DC33C285C2E44008FB972 /* HomePageViewController.swift in Sources */,
 				042DC2DC285B6DE8008FB972 /* CustomGradient.swift in Sources */,
 				042DC34D285C4640008FB972 /* SystemViewController.swift in Sources */,
