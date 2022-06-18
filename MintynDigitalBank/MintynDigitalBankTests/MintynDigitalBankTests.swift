@@ -43,5 +43,28 @@ class MintynDigitalBankTests: XCTestCase {
            let accountBalance = "#22100"
         XCTAssertEqual(name, accountBalance)
        }
+    
+    func testTheNetWorkCallForLedgerBalance() {
+        guard let name = self.user?.ledgerBalance else {
+            return
+        }
+           let ledgerBalance = "#23000"
+        XCTAssertEqual(name, ledgerBalance)
+       }
+    
+    func testTheNetWorkCallForAccountNumber() {
+        guard let name = self.user?.accountNumber else {
+            return
+        }
+           let accountNumber = "1101202033"
+        XCTAssertEqual(name, accountNumber)
+       }
+    func testTheNetWorkCallForAccountType() {
+        guard let name = self.user?.accountType else {
+            return
+        }
+           let accountType = "Individual"
+        XCTAssertEqual(name, accountType)
+       }
 
 }
