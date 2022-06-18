@@ -518,12 +518,9 @@ class HomePageViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.overrideUserInterfaceStyle == .dark {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
-        }
+        view.backgroundColor = UIColor.CustomColor.viewLightBackgroundColor
         setUPViews()
+        updateViewForCurrentTraitCollection()
     }
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
