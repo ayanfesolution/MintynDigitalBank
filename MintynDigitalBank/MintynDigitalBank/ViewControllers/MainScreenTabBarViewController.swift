@@ -24,7 +24,7 @@ class MainScreenTabBarViewController: UITabBarController {
         tabBar.layer.shadowOpacity = 0
         tabBar.layer.shadowRadius = 0
         tabBar.clipsToBounds = false
-        tabBar.backgroundColor = UIColor.white
+        tabBar.backgroundColor = .systemBackground
         home.title = "Home"
         settings.title = "Settings"
         setViewControllers([home, settings], animated: false)

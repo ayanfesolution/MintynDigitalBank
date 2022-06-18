@@ -36,7 +36,6 @@ func customfeaturesButton(text: String, image: String) -> UIView {
         boxButton.axis = .vertical
         boxButton.alignment = .center
         boxButton.translatesAutoresizingMaskIntoConstraints = false
-        boxButton.backgroundColor = UIColor.white
         let button = UIButton(type: .system)
         boxButton.addArrangedSubview(button)
         let config = UIImage.SymbolConfiguration(pointSize: 25)
@@ -47,6 +46,7 @@ func customfeaturesButton(text: String, image: String) -> UIView {
         button.tintColor = UIColor.CustomColor.primaryGoldColor
         let actionsText = UILabel()
         actionsText.text = text
+        actionsText.textColor = UIColor.CustomColor.textColorGray
         actionsText.numberOfLines = 0
         actionsText.translatesAutoresizingMaskIntoConstraints = false
         boxButton.addArrangedSubview(actionsText)
