@@ -30,7 +30,7 @@ extension SettingsPageViewController {
 extension SettingsPageViewController: UITableViewDelegate, UITableViewDataSource {
     private func showNext(scene: UIViewController) {
         scene.modalPresentationStyle = .fullScreen
-        present(scene, animated: true)
+        show(scene, sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
