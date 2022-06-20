@@ -14,7 +14,7 @@ class HomePageViewController: UIViewController {
     let user = NetworkManager.shared.getLoggedInUser()
     //  headerview
     lazy var headerView: UIView = {
-       let header = UIView()
+        let header = UIView()
         header.translatesAutoresizingMaskIntoConstraints = false
         header.heightAnchor.constraint(equalToConstant: 70).isActive = true
         return header
@@ -85,7 +85,7 @@ class HomePageViewController: UIViewController {
     }()
     // profileAccountType
     lazy var profileAccountName: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "\(user?.firstName ?? "") \(user?.lastName ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -94,7 +94,7 @@ class HomePageViewController: UIViewController {
     }()
     // profileAccountType
     lazy var profileAccountType: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "\(user?.accountType ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -104,7 +104,7 @@ class HomePageViewController: UIViewController {
     
     // profileAccountNumber
     lazy var profileAccountNumber: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = ".\(user?.accountNumber ?? "") | Tier 1"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.primaryGoldColor
@@ -151,7 +151,7 @@ class HomePageViewController: UIViewController {
     }()
     // avaliableBalance
     lazy var avaliableBalance: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Available Balance"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -160,7 +160,7 @@ class HomePageViewController: UIViewController {
     }()
     // amountLabel
     lazy var mainAmountLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "\(user?.accountBalance ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.white
@@ -179,7 +179,7 @@ class HomePageViewController: UIViewController {
     }()
     // ledgerBalance
     lazy var ledgerBalance: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Ledger Balance:"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -188,7 +188,7 @@ class HomePageViewController: UIViewController {
     }()
     // amountLabel
     lazy var ledgerAmountLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "\(user?.ledgerBalance ?? "")"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -197,7 +197,7 @@ class HomePageViewController: UIViewController {
     }()
     // hideBalanceLabel
     lazy var hideBalanceLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Hide Balance"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -237,7 +237,7 @@ class HomePageViewController: UIViewController {
     }()
     // transactionsUIView
     lazy var transactionsUIView: UIView = {
-       let transactionsUIView = UIView()
+        let transactionsUIView = UIView()
         transactionsUIView.layer.cornerRadius = 8
         transactionsUIView.layer.borderWidth = 1
         transactionsUIView.layer.borderColor = UIColor.white.cgColor
@@ -247,7 +247,7 @@ class HomePageViewController: UIViewController {
     }()
     // hideBalanceLabel
     lazy var noTranscationsyetLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "No transcations yet"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -256,7 +256,7 @@ class HomePageViewController: UIViewController {
     }()
     // chooseAnOptionToStart
     lazy var chooseAnOptionToStart: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Choose an option below to start."
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.CustomColor.textColorGray
@@ -305,45 +305,45 @@ class HomePageViewController: UIViewController {
     // MARK: - Actions Buttons
     // transferButton
     lazy var transferButton: UIView = {
-       let button = customfeaturesButton(text: "Transfer", image: "arrow.left.arrow.right.square")
+        let button = customfeaturesButton(text: "Transfer", image: "arrow.left.arrow.right.square")
         return button
     }()
     // topUpButton
     lazy var topUpButton: UIView = {
-       let button = customfeaturesButton(text: "Top Up", image: "hourglass.badge.plus")
+        let button = customfeaturesButton(text: "Top Up", image: "hourglass.badge.plus")
         return button
     }()
     // payBillButton
     lazy var payBillButton: UIView = {
-       let button = customfeaturesButton(text: "Pay Bill", image: "rectangle.portrait.and.arrow.right.fill")
+        let button = customfeaturesButton(text: "Pay Bill", image: "rectangle.portrait.and.arrow.right.fill")
         return button
     }()
     // saveMoneyButton
     lazy var saveMoneyButton: UIView = {
-       let button = customfeaturesButton(text: "Save \nMoney", image: "shippingbox.fill")
+        let button = customfeaturesButton(text: "Save \nMoney", image: "shippingbox.fill")
         return button
     }()
     // mintynInvestButton
     lazy var mintynInvestButton: UIView = {
-       let button = customfeaturesButton(text: "Mintyn \nInvest", image: "chart.line.uptrend.xyaxis.circle.fill")
+        let button = customfeaturesButton(text: "Mintyn \nInvest", image: "chart.line.uptrend.xyaxis.circle.fill")
         return button
     }()
     // loanButton
     lazy var loanButton: UIView = {
-       let button = customfeaturesButton(text: "Loan", image: "person.text.rectangle.fill")
+        let button = customfeaturesButton(text: "Loan", image: "person.text.rectangle.fill")
         return button
     }()
     // businessAccountButton
     lazy var businessAccountButton: UIView = {
-       let button = customfeaturesButton(text: "Business \nAccount", image: "bag.fill.badge.plus")
+        let button = customfeaturesButton(text: "Business \nAccount", image: "bag.fill.badge.plus")
         return button
     }()
     // moreButton
     lazy var moreButton: UIView = {
-       let button = customfeaturesButton(text: "More", image: "square.grid.3x1.below.line.grid.1x2.fill")
+        let button = customfeaturesButton(text: "More", image: "square.grid.3x1.below.line.grid.1x2.fill")
         return button
     }()
-  //MARK: - The StackView for Action Buttons
+    //MARK: - The StackView for Action Buttons
     // upperHorizonatalStackView
     lazy var upperHorizonatalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -474,7 +474,7 @@ class HomePageViewController: UIViewController {
     }()
     // mintnyInvestDetailsActionIconLeft
     lazy var mintnyInvestDetailsActionIconLeft: UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
         image.image = UIImage(systemName: "chart.xyaxis.line", withConfiguration: config)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -483,7 +483,7 @@ class HomePageViewController: UIViewController {
     }()
     // mintnyInvestDetailsActionIconRight
     lazy var mintnyInvestDetailsActionIconRight: UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
         image.image = UIImage(systemName: "arrow.forward.circle.fill", withConfiguration: config)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -492,7 +492,7 @@ class HomePageViewController: UIViewController {
     }()
     // savingsGoalsActionIconLeft
     lazy var savingsGoalsActionIconLeft: UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
         image.image = UIImage(systemName: "shippingbox.fill", withConfiguration: config)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -501,7 +501,7 @@ class HomePageViewController: UIViewController {
     }()
     // savingsGoalsActionIconRight
     lazy var savingsGoalsActionIconRight: UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
         image.image = UIImage(systemName: "arrow.forward.circle.fill", withConfiguration: config)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -509,7 +509,7 @@ class HomePageViewController: UIViewController {
         return image
     }()
     lazy var mintynMarketplaceButtonIcon: UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold)
         image.image = UIImage(systemName: "house.fill", withConfiguration: config)
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -534,16 +534,16 @@ class HomePageViewController: UIViewController {
         }
     }
     @objc func switchStateDidChange() {
-            if (hideBalanceSwitch.isOn == true){
-                mainAmountLabel.text = "** . **"
-                ledgerAmountLabel.text = "** . **"
-            }
-            else{
-                mainAmountLabel.text = "#2500.00"
-                ledgerAmountLabel.text = "#3300.00"
-            }
+        if (hideBalanceSwitch.isOn == true){
+            mainAmountLabel.text = "** . **"
+            ledgerAmountLabel.text = "** . **"
         }
-
+        else{
+            mainAmountLabel.text = "#2500.00"
+            ledgerAmountLabel.text = "#3300.00"
+        }
+    }
+    
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -28,7 +28,7 @@ enum CustomFontFamily: String {
 
 func customFont(font: CustomFontFamily, size: CGFloat) -> UIFont {
     guard let customFont = UIFont(name: font.rawValue, size: size) else {
-    return UIFont.systemFont(ofSize: size)
-  }
-  return customFont
+        return UIFont.systemFont(ofSize: size)
+    }
+    return customFont
 }

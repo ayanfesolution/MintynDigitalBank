@@ -29,8 +29,6 @@ func customBoxButton(text: String, image: String) -> UIButton {
 }
 
 func customfeaturesButton(text: String, image: String) -> UIView {
-    
-    
     lazy var boxButton: UIStackView = {
         let boxButton = UIStackView()
         boxButton.axis = .vertical
