@@ -15,14 +15,14 @@ class NetworkManager: NetworkService {
         case invalidCredentials
         var title: String {
             switch self {
-                case .invalidCredentials:
-                    return "Invalid Credentials"
+            case .invalidCredentials:
+                return "Invalid Credentials"
             }
         }
         var message: String {
             switch self {
-                case .invalidCredentials:
-                    return "Check details provided and then try again."
+            case .invalidCredentials:
+                return "Check details provided and then try again."
             }
         }
     }

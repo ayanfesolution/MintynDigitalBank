@@ -34,5 +34,5 @@ class MainScreenTabBarViewController: UITabBarController {
             items[icon].image = UIImage(systemName: tabBarIcons[icon])
         }
     }
-
+    
 }
