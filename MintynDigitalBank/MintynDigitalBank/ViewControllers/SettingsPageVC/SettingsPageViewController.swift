@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsPageViewController: UIViewController {
     // MARK: - Properties (Created Using IIFE: Immediately Invoked Function Expression)
-    let settingsData = SettingsTimeTableList.getListOfMeal()
+    let settingsData = SettingsTimeTableList.getListOfSettingsTable()
     let reusableCell = "settingsPageCell"
     // Header Title
     lazy var navTitleHeader: UILabel = {

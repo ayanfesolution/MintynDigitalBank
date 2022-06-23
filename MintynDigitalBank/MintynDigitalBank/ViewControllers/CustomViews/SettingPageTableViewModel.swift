@@ -13,7 +13,7 @@ struct SettingsList {
 }
 
 struct SettingsTimeTableList {
-    static func getListOfMeal() -> [SettingsList] {
+    static func getListOfSettingsTable() -> [SettingsList] {
         let config = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold)
         let list = [
             SettingsList(viewImage: UIImage(systemName: "person", withConfiguration: config)!, viewLabel: "Profile"),
